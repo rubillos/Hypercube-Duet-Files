@@ -1,4 +1,4 @@
-M505 P"/sys/ToolKraken/"
+M505 P"/sys/ToolDiamond/"
 M98 P"toolsetup.g"
 
 M581 T3 S-1

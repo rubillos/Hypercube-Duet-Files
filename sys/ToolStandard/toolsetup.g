@@ -29,6 +29,9 @@ M558 P5 R0.4 H5 F1200 T9000								; Set Z probe type to effector and the dive h
 G31 P500 X0 Y0 Z0.5												; Set Z probe trigger value, offset and trigger height
 M557 X0:500 Y0:500 S50										; Define mesh grid
 
+;----- Bed Compensation Taper
+M376 H5
+
 ;----- Heater
 M305 P1 X2 T100000 B4138 R4700 S"Hotend"	; Set thermistor + ADC parameters for heater 1
 M143 H1 S280														  ; Set temperature limit for heater 1 to 280C
@@ -44,7 +47,7 @@ G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
 
 ;----- Filament Sensor
-M591 D0 C3															  ; filament sensor on E0 endstop input
+M591 D0 P2 C3															; filament sensor on E0 endstop input
 
 ;----- Pressure Advance
 M572 D0 S0.1														  ; set pressure advance to 0.1 seconds
@@ -52,4 +55,9 @@ M572 D0 S0.1														  ; set pressure advance to 0.1 seconds
 ;----- Filament properties
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
-M117 Standard Toolhead
+; Automatic saving after power loss is not enabled
+
+;----- Custom settings
+M501
+
+M117 "Setup: Standard"

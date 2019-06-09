@@ -1,0 +1,466 @@
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-03 14:05:28 Date and time set at power up + 00:00:08
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-03 14:43:50 Date and time set at power up + 00:00:08
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:11 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:16 HTTP client 192.168.7.176 attempted login with incorrect password
+power up + 00:00:21 HTTP client 192.168.7.176 login succeeded
+2019-06-03 14:58:06 Date and time set at power up + 00:00:21
+2019-06-03 15:22:05 Error: Temperature reading fault on heater 0: sensor open circuit
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:10 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:02:22 HTTP client 192.168.7.176 attempted login with incorrect password
+power up + 00:02:32 HTTP client 192.168.7.176 login succeeded
+2019-06-08 12:25:28 Date and time set at power up + 00:02:32
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:09 HTTP client 192.168.7.176 login succeeded
+2019-06-08 12:33:09 Date and time set at power up + 00:00:09
+2019-06-08 12:41:30 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:09 HTTP client 192.168.7.176 login succeeded
+2019-06-08 12:41:39 Date and time set at power up + 00:00:09
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 13:01:17 Date and time set at power up + 00:00:08
+2019-06-08 13:27:10 HTTP client 192.168.7.176 login succeeded
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:23 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:27 HTTP client 192.168.7.176 login succeeded
+2019-06-08 14:16:14 Date and time set at power up + 00:00:27
+2019-06-08 14:16:16 HTTP client 192.168.7.219 login succeeded
+2019-06-08 14:17:37 HTTP client 192.168.7.219 login succeeded
+2019-06-08 14:17:38 HTTP client 192.168.7.176 attempted login with incorrect password
+2019-06-08 14:17:42 HTTP client 192.168.7.176 login succeeded
+2019-06-08 15:40:05 Error: G0/G1: insufficient axes homed
+2019-06-08 16:05:08 WiFi module started
+2019-06-08 16:05:20 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+2019-06-08 16:05:27 HTTP client 192.168.7.176 login succeeded
+2019-06-08 16:07:18 HTTP client 192.168.7.176 login succeeded
+2019-06-08 16:07:23 HTTP client 192.168.7.176 login succeeded
+2019-06-08 16:08:09 HTTP client 192.168.7.176 login succeeded
+2019-06-08 16:41:14 Warning: Macro file trigger2.g not found.
+2019-06-08 16:41:14 Warning: Macro file trigger2.g not found.
+2019-06-08 16:41:29 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 Warning: Macro file trigger2.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 attempted login with incorrect password
+power up + 00:00:20 HTTP client 192.168.7.176 login succeeded
+2019-06-08 16:42:05 Date and time set at power up + 00:00:20
+2019-06-08 16:52:32 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:01:47 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:09 HTTP client 192.168.7.176 attempted login with incorrect password
+power up + 00:00:33 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:02:22 Date and time set at power up + 00:00:33
+2019-06-08 17:03:09 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 Warning: Macro file trigger2.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:15 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:15 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:03:24 Date and time set at power up + 00:00:15
+2019-06-08 17:09:08 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file trigger2.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:09:18 Date and time set at power up + 00:00:08
+2019-06-08 17:13:13 Warning: Macro file trigger2.g not found.
+2019-06-08 17:15:41 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 Warning: Macro file trigger3.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:15:50 Date and time set at power up + 00:00:08
+2019-06-08 17:17:18 Warning: Macro file trigger3.g not found.
+2019-06-08 17:20:23 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:21:32 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 attempted login with incorrect password
+power up + 00:00:15 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:21:14 Date and time set at power up + 00:00:15
+2019-06-08 17:28:13 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:09 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:09 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:28:21 Date and time set at power up + 00:00:09
+2019-06-08 17:39:50 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:40:00 Date and time set at power up + 00:00:08
+2019-06-08 17:44:28 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:44:37 Date and time set at power up + 00:00:08
+2019-06-08 17:56:16 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 17:56:26 Date and time set at power up + 00:00:08
+2019-06-08 18:10:06 Warning: Macro file trigger3.g not found.
+2019-06-08 18:23:08 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:13 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:14 HTTP client 192.168.7.176 login succeeded
+2019-06-08 18:23:22 Date and time set at power up + 00:00:14
+2019-06-08 18:34:11 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 18:34:19 Date and time set at power up + 00:00:08
+2019-06-08 18:38:26 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:00 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:22 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:23 HTTP client 192.168.7.176 login succeeded
+2019-06-08 18:38:50 Date and time set at power up + 00:00:23
+2019-06-08 18:45:26 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 18:45:35 Date and time set at power up + 00:00:08
+2019-06-08 18:48:28 Warning: Macro file trigger2.g not found.
+2019-06-08 18:48:47 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 18:48:56 Date and time set at power up + 00:00:08
+2019-06-08 18:49:09 Error: Temperature reading fault on heater 2: unknown temperature sensor channel
+2019-06-08 18:49:20 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:13 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:14 HTTP client 192.168.7.176 login succeeded
+2019-06-08 18:49:37 Date and time set at power up + 00:00:14
+2019-06-08 18:51:28 Error: Temperature reading fault on heater 0: sensor open circuit
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-08 19:30:06 Date and time set at power up + 00:00:08
+2019-06-08 19:30:07 HTTP client 192.168.7.219 login succeeded
+2019-06-08 19:30:26 HTTP client 192.168.7.176 login succeeded
+2019-06-08 20:51:01 HTTP client 192.168.7.176 login succeeded
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:01:10 HTTP client 192.168.7.176 attempted login with incorrect password
+power up + 00:01:17 HTTP client 192.168.7.176 login succeeded
+2019-06-09 11:33:35 Date and time set at power up + 00:01:17
+2019-06-09 11:51:29 Error: M589: Bad or missing parameter
+2019-06-09 12:04:03 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:09 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:04:12 Date and time set at power up + 00:00:09
+2019-06-09 12:04:57 Error: G0/G1: insufficient axes homed
+2019-06-09 12:05:17 Warning: Macro file trigger4.g not found.
+2019-06-09 12:05:29 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:07 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:07 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:05:06 Date and time set at power up + 00:00:07
+2019-06-09 12:05:32 Error: Temperature reading fault on heater 2: sensor open circuit
+2019-06-09 12:05:37 Error: Temperature reading fault on heater 5: unknown temperature sensor channel
+2019-06-09 12:09:23 Error: Failed to rename file or directory /_gsdata_/_file_state_upload.tmp to /_gsdata_/_file_state_v4._gs
+2019-06-09 12:10:09 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:10:16 Date and time set at power up + 00:00:08
+2019-06-09 12:11:09 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Error: M572: Invalid extruder number '5'
+power up + 00:00:01 WiFi module started
+power up + 00:00:07 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:07 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:11:17 Date and time set at power up + 00:00:07
+2019-06-09 12:12:18 Error: Temperature reading fault on heater 2: unknown temperature sensor channel
+2019-06-09 12:19:04 Error: Failed to rename file or directory /_gsdata_/_file_state_upload.tmp to /_gsdata_/_file_state_v4._gs
+2019-06-09 12:19:27 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:19:36 Date and time set at power up + 00:00:08
+2019-06-09 12:20:19 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 WiFi module started
+power up + 00:00:02 Event logging stopped
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:10 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:10 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:25:01 Date and time set at power up + 00:00:10
+2019-06-09 12:25:43 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:07 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:07 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:25:50 Date and time set at power up + 00:00:07
+2019-06-09 12:27:37 Error: Failed to rename file or directory /_gsdata_/_file_state_upload.tmp to /_gsdata_/_file_state_v4._gs
+2019-06-09 12:27:50 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:27:59 Date and time set at power up + 00:00:08
+2019-06-09 12:28:16 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:07 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:07 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:28:24 Date and time set at power up + 00:00:07
+2019-06-09 12:33:25 Error: Attempting to extrude with no tool selected.
+2019-06-09 12:33:55 Error: Temperature reading fault on heater 2: unknown temperature sensor channel
+2019-06-09 12:35:12 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Error: M572: Invalid extruder number '5'
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Error: M572: Invalid extruder number '5'
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:18 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:43 WiFi reported error: Timed out while trying to connect to 18th Street Air Net
+power up + 00:00:43 WiFi module is idle
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:01 Event logging started
+power up + 00:00:01 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:08 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:08 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:44:13 Date and time set at power up + 00:00:08
+2019-06-09 12:44:39 Event logging stopped
+power up + 00:00:00 Event logging started
+power up + 00:00:00 Error: M587: Failed to add SSID to remembered list
+power up + 00:00:01 Warning: Macro file config-override.g not found.
+power up + 00:00:01 WiFi module started
+power up + 00:00:13 WiFi module is connected to access point 18th Street Air Net, IP address 192.168.7.250
+power up + 00:00:14 HTTP client 192.168.7.176 login succeeded
+2019-06-09 12:44:56 Date and time set at power up + 00:00:14
