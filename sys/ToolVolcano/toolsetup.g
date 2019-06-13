@@ -5,8 +5,8 @@ M584 X0 Y1 Z2:3 E7							          ; X, Y, 2 x Z, 1 extruder
 M671 X-20:520 Y250:250 S2.0			          ; leadscrews at left and right of X axis
 
 ;----- Drives
-M569 P0 S1										            ; Physical drive 0 goes forwards - X
-M569 P1 S1										            ; Physical drive 1 goes forwards - Y
+M569 P0 S0										            ; Physical drive 0 goes backwards - X
+M569 P1 S0										            ; Physical drive 1 goes backwards - Y
 M569 P2 S1										            ; Physical drive 2 goes forwards - Z1
 M569 P3 S1										            ; Physical drive 3 goes forwards - Z2
 M569 P7 S1										            ; Physical drive 7 goes forwards - E4
@@ -30,7 +30,7 @@ G31 P500 X0 Y0 Z0.5												; Set Z probe trigger value, offset and trigger h
 M557 X0:500 Y0:500 S50										; Define mesh grid
 
 ;----- Bed Compensation Taper
-M376 H5
+M376 H5                                   ; reduce over 5mm
 
 ;----- Heater
 M305 P1 X2 T100000 B4138 R4700 S"Hotend"	; Set thermistor + ADC parameters for heater 1

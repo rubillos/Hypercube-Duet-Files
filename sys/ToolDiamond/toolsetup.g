@@ -5,8 +5,8 @@ M584 X0 Y1 Z2:3 E5:6:7:8:9							  ; X, Y, 2 x Z, 1 extruder
 M671 X-20:520 Y250:250 S2.0			          ; leadscrews at left and right of X axis
 
 ;----- Drives
-M569 P0 S1										            ; Physical drive 0 goes forwards - X
-M569 P1 S1										            ; Physical drive 1 goes forwards - Y
+M569 P0 S0										            ; Physical drive 0 goes backwards - X
+M569 P1 S0										            ; Physical drive 1 goes backwards - Y
 M569 P2 S1										            ; Physical drive 2 goes forwards - Z1
 M569 P3 S1										            ; Physical drive 3 goes forwards - Z2
 M569 P5 S1										            ; Physical drive 5 goes forwards - E2
@@ -33,6 +33,9 @@ M558 P5 R0.4 H5 F1200 T9000								; Set Z probe type to effector and the dive h
 G31 P500 X0 Y0 Z0.5												; Set Z probe trigger value, offset and trigger height
 M557 X0:500 Y0:500 S50										; Define mesh grid
 
+;----- Bed Compensation Taper
+M376 H5                                   ; reduce over 5mm
+
 ;----- Heater
 M305 P1 X2 T100000 B4138 R4700 S"Hotend"	; Set thermistor + ADC parameters for heater 1
 M143 H1 S280														  ; Set temperature limit for heater 1 to 280C
@@ -41,8 +44,8 @@ M143 H1 S280														  ; Set temperature limit for heater 1 to 280C
 M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
 ;M106 P2 S0 I0 F500 H-1 C"Air Pump"
 
-M106 P5 S0 I0 H2:3:4:5 T45  C"Water Pump"
-M106 P6 S0 I0 H2:3:4:5 T45  C"Water Cooling"
+M106 P5 S0 I0 H2 T45  C"Water Pump"
+M106 P6 S0 I0 H2 T45  C"Water Cooling"
 
 ;----- Tools
 M563 P0 S"Cyan" D0 H2 F0									; Define tool 0
@@ -68,7 +71,6 @@ G10 P4 R0 S0															; Set initial tool 4 active and standby temperatures 
 M563 P5 S"Mixing" D0:1:2:3:4 H2 F0				; Define tool 5
 G10 P5 X0 Y0 Z0													  ; Set tool 5 axis offsets
 G10 P5 R0 S0															; Set initial tool 5 active and standby temperatures to 0C
-
 M568 P5 S1															  ; Enable mixing for tool 5
 M567 P5 E0.2:0.2:0.2:0.2:0.2							; Set mixing ratios for tool 5
 
