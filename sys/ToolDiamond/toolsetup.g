@@ -7,8 +7,8 @@ M671 X-20:520 Y250:250 S2.0			          ; leadscrews at left and right of X axis
 ;----- Drives
 M569 P0 S0										            ; Physical drive 0 goes backwards - X
 M569 P1 S0										            ; Physical drive 1 goes backwards - Y
-M569 P2 S1										            ; Physical drive 2 goes forwards - Z1
-M569 P3 S1										            ; Physical drive 3 goes forwards - Z2
+M569 P2 S0										            ; Physical drive 2 goes reverse - Z1
+M569 P3 S0										            ; Physical drive 3 goes reverse - Z2
 M569 P5 S1										            ; Physical drive 5 goes forwards - E2
 M569 P6 S1										            ; Physical drive 6 goes forwards - E3
 M569 P7 S1										            ; Physical drive 7 goes forwards - E4
