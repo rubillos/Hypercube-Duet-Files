@@ -33,8 +33,8 @@ M557 X0:500 Y0:500 S50										; Define mesh grid
 M376 H5                                   ; reduce over 5mm
 
 ;----- Heater
-M305 P1 X2 T100000 B4138 R4700 S"Hotend"	; Set thermistor + ADC parameters for heater 1
-M143 H1 S280														  ; Set temperature limit for heater 1 to 280C
+M305 P3 X2 T100000 B4138 R4700 S"Hotend"	; Set thermistor + ADC parameters
+M143 H3 S280														  ; Set temperature limit to 280C
 
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
@@ -42,7 +42,7 @@ M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Set fan 0 value, PWM signal inversion 
 M106 P1 S1 I0 F500 H1 T45 C"Extruder"		  ; Set fan 1 value, PWM signal inversion and frequency. Thermostatic control is turned on
 
 ;----- Tools
-M563 P0 S"Volcano" D0 H2									; Define tool 0
+M563 P0 S"Volcano" D0 H3									; Define tool 0
 G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
 

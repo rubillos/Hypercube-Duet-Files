@@ -36,14 +36,14 @@ M557 X0:500 Y0:500 S50										; Define mesh grid
 M376 H5                                   ; reduce over 5mm
 
 ;----- Heaters
-M305 P1 T100000 B4138 R4700 X2 S"1"				; Set thermistor + ADC parameters for heater 1 and remap it to channel 3
-M143 H1 S280														  ; Set temperature limit for heater 1 to 280C
-M305 P2 T100000 B4138 R4700 X3 S"2"				; Set thermistor + ADC parameters for heater 2 and remap it to channel 4
-M143 H2 S280														  ; Set temperature limit for heater 2 to 280C
-M305 P3 T100000 B4138 R4700 X4 S"3"				; Set thermistor + ADC parameters for heater 3 and remap it to channel 5
-M143 H3 S280														  ; Set temperature limit for heater 3 to 280C
-M305 P4 T100000 B4138 R4700 X5 S"4"				; Set thermistor + ADC parameters for heater 4 and remap it to channel 6
-M143 H4 S280														  ; Set temperature limit for heater 4 to 280C
+M305 P3 T100000 B4138 R4700 S"1"				  ; Set thermistor + ADC parameters
+M143 H3 S280														  ; Set temperature limit to 280C
+M305 P4 T100000 B4138 R4700 S"2"				  ; Set thermistor + ADC parameters
+M143 H4 S280														  ; Set temperature limit to 280C
+M305 P5 T100000 B4138 R4700 S"3"				  ; Set thermistor + ADC parameters
+M143 H5 S280														  ; Set temperature limit to 280C
+M305 P6 T100000 B4138 R4700 S"4"				  ; Set thermistor + ADC parameters
+M143 H6 S280														  ; Set temperature limit to 280C
 
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 C"Part Cooling"					; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
@@ -53,19 +53,19 @@ M106 P5 S0 I0 H2:3:4:5 T45  C"Water Pump"
 M106 P6 S0 I0 H2:3:4:5 T45  C"Water Cooling"
 
 ;----- Tools
-M563 P0 S"Kraken 1" D0 H2 F0							; Define tool 0
+M563 P0 S"Kraken 1" D0 H3 F0							; Define tool 0
 G10 P0 X-10 Y0 Z0												  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
 
-M563 P1 S"Kraken 2" D1 H3 F0							; Define tool 1
+M563 P1 S"Kraken 2" D1 H4 F0							; Define tool 1
 G10 P1 X10 Y0 Z0												  ; Set tool 1 axis offsets
 G10 P1 R0 S0															; Set initial tool 1 active and standby temperatures to 0C
 
-M563 P2 S"Kraken 3" D2 H4 F0							; Define tool 2
+M563 P2 S"Kraken 3" D2 H5 F0							; Define tool 2
 G10 P2 X10 Y-20 Z0												; Set tool 2 axis offsets
 G10 P2 R0 S0															; Set initial tool 2 active and standby temperatures to 0C
 
-M563 P3 S"Kraken 4" D3 H5 F0							; Define tool 3
+M563 P3 S"Kraken 4" D3 H6 F0							; Define tool 3
 G10 P3 X-10 Y-20 Z0												; Set tool 3 axis offsets
 G10 P3 R0 S0															; Set initial tool 3 active and standby temperatures to 0C
 
