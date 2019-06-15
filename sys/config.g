@@ -1,4 +1,4 @@
-M929 P"eventlog.txt" S1
+;M929 P"eventlog.txt" S1
 
 ;----- General preferences
 G90													                    ; Send absolute coordinates...
@@ -16,17 +16,20 @@ M586 P1 S1										                  ; Enable FTP
 M586 P2 S1										                  ; Enable Telnet
 
 ;----- Axis Limits
-M208 X0:500 Y0:500 Z0:750			; X range 0 to 500, Y range 0 to 500, Z range 0 to 750
+M208 X0:500 Y0:500 Z0:750			                  ; X range 0 to 500, Y range 0 to 500, Z range 0 to 750
 
 
 ;----- Bed heater
 M305 P0 T100000 B4138 R4700		                  ; Set thermistor + ADC parameters for heater 0
 M143 H0 S120									                  ; Set temperature limit for heater 0 to 120C
+M307 H0 A30.2 C69.4 D1.7 V0 B0
 
 ;----- Built-in temperature sensors
 M305 P100 S"CPU"							                  ; Main CPU
 M305 P101 S"Drivers Duet"			                  ; Drivers on Duet
 M305 P102 S"Drivers Duex5"				              ; Drivers on Duex5
+
+M912 P0 S-12                                    ; CPU temp calibration
 
 ;----- Fans
 M106 P3 S0.5 I1 H-1 C"Frame Light"							; Frame lights
