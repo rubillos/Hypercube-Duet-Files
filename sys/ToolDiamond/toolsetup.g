@@ -2,7 +2,7 @@
 
 ;----- Drive mapping
 M584 X0 Y1 Z2:3 E5:6:7:8:9							  ; X, Y, 2 x Z, 1 extruder
-M671 X-20:520 Y250:250 S2.0			          ; leadscrews at left and right of X axis
+M671 X-30:530 Y250:250 S2.0			          ; leadscrews at left and right of X axis
 
 ;----- Drives
 M569 P0 S0										            ; Physical drive 0 goes backwards - X
@@ -88,8 +88,5 @@ M572 D0:1:2:3:4 S0.25											; set pressure advance for all 5 extruders
 M404 N1.75 D0.4													; filament width and nozzle diameter
 
 ; Automatic saving after power loss is not enabled
-
-;----- Custom settings
-M501
 
 M117 "Setup: Diamond"

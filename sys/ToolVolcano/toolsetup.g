@@ -2,7 +2,7 @@
 
 ;----- Drive mapping
 M584 X0 Y1 Z2:3 E7							          ; X, Y, 2 x Z, 1 extruder
-M671 X-20:520 Y250:250 S2.0			          ; leadscrews at left and right of X axis
+M671 X-30:530 Y250:250 S2.0			          ; leadscrews at left and right of X axis
 
 ;----- Drives
 M569 P0 S0										            ; Physical drive 0 goes backwards - X
@@ -56,8 +56,5 @@ M572 D0 S0.1														  ; set pressure advance to 0.1 seconds
 M404 N1.75 D1.0													  ; filament width and nozzle diameter
 
 ; Automatic saving after power loss is not enabled
-
-;----- Custom settings
-M501
 
 M117 "Setup: Volcano"
