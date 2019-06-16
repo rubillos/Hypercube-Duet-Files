@@ -1,3 +1,4 @@
+M112            ; stop everything
 M552 S0         ; shut down networking
 G4 P250         ; wait 250ms
 M999            ; restart
