@@ -1,27 +1,17 @@
 ; Standard
 
-;----- Drive mapping
-M584 X0 Y1 Z2:3 E7							          ; X, Y, 2 x Z, 1 extruder
-M671 X-30:530 Y250:250 S2.0			          ; leadscrews at left and right of X axis
+;----- Extruder mapping
+M584 E7							                      ; 1 extruder
 
-;----- Drives
-M569 P0 S0										            ; Physical drive 0 goes backwards - X
-M569 P1 S0										            ; Physical drive 1 goes backwards - Y
-M569 P2 S0										            ; Physical drive 2 goes reverse - Z1
-M569 P3 S0										            ; Physical drive 3 goes reverse - Z2
+;----- Extruders
 M569 P7 S1										            ; Physical drive 7 goes forwards - E4
 
-M350     X16			  Y16			  Z16		  E16 I1					; Configure microstepping with interpolation
-M92	     X80.00	    Y80.00	Z4000.00	E420.00					; Set steps per mm
-M203	X24000.00  Y24000.00	 Z360.00	E3000.00				; Set maximum speeds (mm/min)
-M201	 X1500.00		Y1500.00	 Z120.00	E500.00					; Set accelerations (mm/s^2)
-M566    X600.00	   Y600.00	  Z24.00	E120.00					; Set maximum instantaneous speed changes (mm/min)
-M906   X1800.00		Y1800.00	Z1800.00	E1800.00 I20	  ; Set motor currents (mA) and motor idle factor in percent
-
-M84 S30											              ; Set idle timeout
-
-;----- Endstops
-M574 X1 Y1 S3									            ; Set XY endstops controlled by motor load detection
+M350 E16 I1					                      ; Configure microstepping with interpolation
+M92 E420.00					                      ; Set steps per mm
+M203 E3000.00				                      ; Set maximum speeds (mm/min)
+M201 E500.00					                    ; Set accelerations (mm/s^2)
+M566 E120.00					                    ; Set maximum instantaneous speed changes (mm/min)
+M906 E1500.00 I30                         ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstops controlled by probe
@@ -58,3 +48,5 @@ M404 N1.75 D0.4													  ; filament width and nozzle diameter
 ; Automatic saving after power loss is not enabled
 
 M117 "Setup: Standard"
+
+M98 P"/sys/finish.g"

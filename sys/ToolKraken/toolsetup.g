@@ -1,30 +1,20 @@
 ; Kraken
 
-;----- Drive mapping
-M584 X0 Y1 Z2:3 E5:6:7:8				          ; X, Y, 2 x Z, 1 extruder
-M671 X-30:530 Y250:250 S2.0			          ; leadscrews at left and right of X axis
+;----- Extruder mapping
+M584 E5:6:7:8				          ; 4 extruders
 
 ;----- Drives
-M569 P0 S0										            ; Physical drive 0 goes backwards - X
-M569 P1 S0										            ; Physical drive 1 goes backwards - Y
-M569 P2 S0										            ; Physical drive 2 goes reverse - Z1
-M569 P3 S0										            ; Physical drive 3 goes reverse - Z2
 M569 P5 S1										            ; Physical drive 5 goes forwards - E2
 M569 P6 S1										            ; Physical drive 6 goes forwards - E3
 M569 P7 S1										            ; Physical drive 7 goes forwards - E4
 M569 P8 S1										            ; Physical drive 8 goes forwards - E5
 
-M350     X16			  Y16			  Z16		  E16:16:16:16 I1				               	; Configure microstepping with interpolation
-M92	     X80.00	    Y80.00	Z4000.00	E420.00:420.00:420.00:420.00					; Set steps per mm
-M203	X18000.00  Y18000.00	 Z360.00	E3000.00:3000.00:3000.00:3000.00			; Set maximum speeds (mm/min)
-M201	 X3000.00		Y3000.00	 Z120.00	E500.00:500.00:500.00:500.00					; Set accelerations (mm/s^2)
-M566    X900.00	   Y900.00	  Z24.00	E120.00:120.00:120.00:120.00					; Set maximum instantaneous speed changes (mm/min)
-M906   X1800.00		Y1800.00	Z1800.00	E1800.00:1800.00:1800.00:1800.00 I30	; Set motor currents (mA) and motor idle factor in percent
-
-M84 S30											              ; Set idle timeout
-
-;----- Endstops
-M574 X1 Y1 S3									            ; Set endstops controlled by motor load detection
+M350 E16:16:16:16 I1				               ; Configure microstepping with interpolation
+M92 E420.00:420.00:420.00:420.00					; Set steps per mm
+M203 E3000.00:3000.00:3000.00:3000.00			; Set maximum speeds (mm/min)
+M201 E500.00:500.00:500.00:500.00					; Set accelerations (mm/s^2)
+M566 E120.00:120.00:120.00:120.00					; Set maximum instantaneous speed changes (mm/min)
+M906 E1500.00:1500.00:1500.00:1500.00 I30	; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Z-Probe
 M574 Z1 S2														  	; Set Z endstops controlled by probe
@@ -87,3 +77,5 @@ M404 N1.75 D0.4													; filament width and nozzle diameter
 ; Automatic saving after power loss is not enabled
 
 M117 "Setup: Kraken"
+
+M98 P"/sys/finish.g"
