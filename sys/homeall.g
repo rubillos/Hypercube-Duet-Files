@@ -7,7 +7,7 @@ M915 X Y S4 R0 F0       ; enable stall detection
 M201 X200.00 Y200.00    ; reduce acceleration
 G1 S2 Z3 F9000          ; lift Z relative to current position
 M400                    ; wait for completion
-G1 S2 X-0.2 F4000       ; tiny move to energize stepper
+G1 S2 X0.2 F4000       ; tiny move to energize stepper
 M400                    ; wait for completion
 G4 P100                 ; wait
 G1 S3 X-525 Y-525 F4000 ; move quickly to X or Y endstop and stop there
