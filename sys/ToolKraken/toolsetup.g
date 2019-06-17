@@ -74,8 +74,7 @@ M572 D3 S0.1														; set pressure advance for extruder 4
 ;----- Filament properties
 M404 N1.75 D0.4													; filament width and nozzle diameter
 
-; Automatic saving after power loss is not enabled
-
+;----- Finish
 M117 "Setup: Kraken"
 
 M98 P"/sys/finish.g"

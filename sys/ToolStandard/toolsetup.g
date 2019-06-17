@@ -8,9 +8,9 @@ M569 P7 S1										            ; Physical drive 7 goes forwards - E4
 
 M350 E16 I1					                      ; Configure microstepping with interpolation
 M92 E420.00					                      ; Set steps per mm
-M203 E3000.00				                      ; Set maximum speeds (mm/min)
-M201 E500.00					                    ; Set accelerations (mm/s^2)
-M566 E120.00					                    ; Set maximum instantaneous speed changes (mm/min)
+M203 E3600.00				                      ; Set maximum speeds (mm/min)
+M201 E3600.00					                    ; Set accelerations (mm/s^2)
+M566 E3600.00					                    ; Set maximum instantaneous speed changes (mm/min)
 M906 E1500.00 I30                         ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Z-Probe
@@ -45,8 +45,7 @@ M572 D0 S0.1														  ; set pressure advance to 0.1 seconds
 ;----- Filament properties
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
-; Automatic saving after power loss is not enabled
-
+;----- Finish
 M117 "Setup: Standard"
 
 M98 P"/sys/finish.g"

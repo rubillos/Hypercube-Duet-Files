@@ -11,11 +11,11 @@ M569 P8 S1										            ; Physical drive 8 goes forwards - E5
 M569 P9 S1										            ; Physical drive 9 goes forwards - E6
 
 M350 E16:16:16:16:16 I1				               	     ; Configure microstepping with interpolation
-M92 E420.00:420.00:420.00:420.00:420.00					    ; Set steps per mm
+M92 E420.00:420.00:420.00:420.00:420.00					   ; Set steps per mm
 M203 E3000.00:3000.00:3000.00:3000.00:3000.00		   ; Set maximum speeds (mm/min)
-M201 E500.00:500.00:500.00:500.00:500.00				    ; Set accelerations (mm/s^2)
-M566 E120.00:120.00:120.00:120.00:120.00				    ; Set maximum instantaneous speed changes (mm/min)
-M906 E1500.00:1500.00:1500.00:1500.00:1500.00 I30	  ; Set motor currents (mA) and motor idle factor in percent
+M201 E500.00:500.00:500.00:500.00:500.00				   ; Set accelerations (mm/s^2)
+M566 E120.00:120.00:120.00:120.00:120.00				   ; Set maximum instantaneous speed changes (mm/min)
+M906 E1500.00:1500.00:1500.00:1500.00:1500.00 I30	 ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstops controlled by probe
@@ -65,11 +65,11 @@ M568 P5 S1															  ; Enable mixing for tool 5
 M567 P5 E0.2:0.2:0.2:0.2:0.2							; Set mixing ratios for tool 5
 
 ;----- Filament Sensors
-M591 D0 C3															; filament sensor on E0 endstop input
-M591 D1 C3															; filament sensor on E0 endstop input
-M591 D2 C3															; filament sensor on E0 endstop input
-M591 D3 C3															; filament sensor on E0 endstop input
-M591 D4 C3															; filament sensor on E0 endstop input
+M591 D0 C3															  ; filament sensor on E0 endstop input
+M591 D1 C3															  ; filament sensor on E0 endstop input
+M591 D2 C3															  ; filament sensor on E0 endstop input
+M591 D3 C3															  ; filament sensor on E0 endstop input
+M591 D4 C3															  ; filament sensor on E0 endstop input
 
 ;----- Pressure Advance
 M572 D0:1:2:3:4 S0.25											; set pressure advance for all 5 extruders
@@ -77,8 +77,7 @@ M572 D0:1:2:3:4 S0.25											; set pressure advance for all 5 extruders
 ;----- Filament properties
 M404 N1.75 D0.4													; filament width and nozzle diameter
 
-; Automatic saving after power loss is not enabled
-
+;----- Finish
 M117 "Setup: Diamond"
 
 M98 P"/sys/finish.g"

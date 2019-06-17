@@ -45,8 +45,7 @@ M572 D0 S0.1														  ; set pressure advance to 0.1 seconds
 ;----- Filament properties
 M404 N1.75 D1.0													  ; filament width and nozzle diameter
 
-; Automatic saving after power loss is not enabled
-
+;----- Finish
 M117 "Setup: Volcano"
 
 M98 P"/sys/finish.g"
