@@ -22,7 +22,7 @@ M208 X0:500 Y0:500 Z0:750			                  ; X range 0 to 500, Y range 0 to 5
 ;----- Bed heater
 M305 P0 T100000 B4138 R4700		                  ; Set thermistor + ADC parameters for heater 0
 M143 H0 S120									                  ; Set temperature limit for heater 0 to 120C
-M307 H0 A30.2 C69.4 D1.7 V0 B0 S0.7             ; set heating parameters
+M307 H0 A107.0 C390.6 D0.9 V0 B0 S1.0           ; set heating parameters
 
 ;----- Built-in temperature sensors
 M305 P100 S"CPU"							                  ; Main CPU
@@ -50,12 +50,20 @@ M569 P3 S0										                  ; Physical drive 3 goes reverse - Z2
 
 M350     X16			  Y16			  Z16					      ; Configure microstepping with interpolation
 M92	     X80.00	    Y80.00	Z4000.00            ; Set steps per mm
-M203	X24000.00  Y24000.00	 Z360.00            ; Set maximum speeds (mm/min)
+M203	X30000.00  Y30000.00	 Z450.00            ; Set maximum speeds (mm/min)
 M201	 X3000.00		Y3000.00	 Z120.00            ; Set accelerations (mm/s^2)
-M566    X600.00	   Y600.00	  Z24.00            ; Set maximum instantaneous speed changes (mm/min)
+M566   X1200.00	  Y1200.00	 Z450.00            ; Set maximum instantaneous speed changes (mm/min)
 M906   X1500.00		Y1500.00	Z1500.00 I30	      ; Set motor currents (mA) and motor idle factor in percent
 
-M84 S30											                    ; Set idle timeout
+;----- Stepper Brake
+M584 A11                                        ; map stepper 11 to A axis
+M569 P11 R1                                     ; set enable to active high
+
+M92 A80.00                                      ; dummy steps/mm
+M203 A360                                       ; dummy max speed
+M201 A120.00                                    ; dummy acceleration
+M566 A24.00                                     ; dummy jerk
+M906 A200.0                                     ; enable stepper
 
 ;----- Endstops
 M574 X1 Y1 S3									                  ; Set XY endstops controlled by motor load detection
