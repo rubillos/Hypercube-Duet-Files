@@ -1,5 +1,7 @@
 ; homez.g
 
+G29 S2                    ; disable any bed compensation
+
 G91                       ; relative positioning
 G1 Z3 F9000 S2            ; lift Z relative to current position
 G90                       ; absolute positioning
@@ -13,7 +15,8 @@ G4 P200                   ; wait
 M558 F300                 ; do a slow Probe
 G30                       ; home Z by probing the bed
 
-; lift Z after probing
 G91                       ; relative positioning
 G1 Z5 F9000               ; lift Z relative to current position
 G90                       ; absolute positioning
+
+G29 S1 P"/sys/heightmap.csv"  ; activate bed compensation
