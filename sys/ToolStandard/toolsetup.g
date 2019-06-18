@@ -14,22 +14,23 @@ M566 E3600.00					                    ; Set maximum instantaneous speed changes 
 M906 E1500.00 I30                         ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Z-Probe
-M574 Z1 S2															  ; Set Z endstops controlled by probe
-M558 P5 R0.4 H5 F1200 T9000								; Set Z probe type to effector and the dive height + speeds
-G31 P500 X0 Y0 Z0.5												; Set Z probe trigger value, offset and trigger height
-M557 X0:500 Y0:500 S50										; Define mesh grid
+M574 Z1 S2															  ; Set Z endstop controlled by probe
+G31 X0 Y0 Z0 P100                         ; No probe offset, set trigger level
+M558 P5 I1 F300 T24000 H3 R0.3            ; Digital probe, inverted trigger, z speed 1000mm/min, travel 2000mm/sec, 3mm dive height
+M557 X30:470 Y30:470 S55									; Define mesh grid
 
 ;----- Bed Compensation Taper
 M376 H5                                   ; reduce over 5mm
 
 ;----- Heater
-M305 P3 X2 T100000 B4138 R4700 S"Hotend"	; Set thermistor + ADC parameters
-M143 H3 S280														  ; Set temperature limit to 280C
+M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
+M143 H1 S280														  ; Set temperature limit to 280C
+M307 H1 A446.7 C176.3 D5.1 V24.3 B0 S1.0  ; set heating parameters
 
 ;----- Fans
-M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
+M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Fan 0, off
 ;M106 P2 S0 I0 F500 H-1 C"Air Pump"				; assign air pump to fan 2
-M106 P1 S1 I0 F500 H1 T45 C"Extruder"		  ; Set fan 1 value, PWM signal inversion and frequency. Thermostatic control is turned on
+M106 P1 S0 I0 H1 T40 C"Nozzle"		        ; Fan 1, thermostatic, 40º trigger speed
 
 ;----- Tools
 M563 P0 S"Standard" D0 H1									; Define tool 0

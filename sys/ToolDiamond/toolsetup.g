@@ -27,8 +27,8 @@ M557 X0:500 Y0:500 S50										; Define mesh grid
 M376 H5                                   ; reduce over 5mm
 
 ;----- Heater
-M305 P3 X2 T100000 B4138 R4700 S"Hotend"	; Set thermistor + ADC parameters
-M143 H3 S280														  ; Set temperature limit to 280C
+M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
+M143 H1 S280														  ; Set temperature limit to 280C
 
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
@@ -38,27 +38,27 @@ M106 P5 S0 I0 H2 T45  C"Water Pump"
 M106 P6 S0 I0 H2 T45  C"Water Cooling"
 
 ;----- Tools
-M563 P0 S"Cyan" D0 H3 F0									; Define tool 0
+M563 P0 S"Cyan" D0 H1 F0									; Define tool 0
 G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
 
-M563 P1 S"Yellow" D1 H3 F0								; Define tool 1
+M563 P1 S"Yellow" D1 H1 F0								; Define tool 1
 G10 P1 X0 Y0 Z0													  ; Set tool 1 axis offsets
 G10 P1 R0 S0															; Set initial tool 1 active and standby temperatures to 0C
 
-M563 P2 S"Magenta" D2 H3 F0								; Define tool 2
+M563 P2 S"Magenta" D2 H1 F0								; Define tool 2
 G10 P2 X0 Y0 Z0													  ; Set tool 2 axis offsets
 G10 P2 R0 S0															; Set initial tool 2 active and standby temperatures to 0C
 
-M563 P3 S"Black" D3 H3 F0									; Define tool 3
+M563 P3 S"Black" D3 H1 F0									; Define tool 3
 G10 P3 X0 Y0 Z0													  ; Set tool 3 axis offsets
 G10 P3 R0 S0															; Set initial tool 3 active and standby temperatures to 0C
 
-M563 P4 S"White" D4 H3 F0									; Define tool 4
+M563 P4 S"White" D4 H1 F0									; Define tool 4
 G10 P4 X0 Y0 Z0													  ; Set tool 4 axis offsets
 G10 P4 R0 S0															; Set initial tool 4 active and standby temperatures to 0C
 
-M563 P5 S"Mixing" D0:1:2:3:4 H3 F0				; Define tool 5
+M563 P5 S"Mixing" D0:1:2:3:4 H1 F0				; Define tool 5
 G10 P5 X0 Y0 Z0													  ; Set tool 5 axis offsets
 G10 P5 R0 S0															; Set initial tool 5 active and standby temperatures to 0C
 M568 P5 S1															  ; Enable mixing for tool 5
