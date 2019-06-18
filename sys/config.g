@@ -43,7 +43,7 @@ M106 P8 T35:65 H100:101:102 L0.1 C"Electronics 2"		; Duet cooling set #2
 
 ;----- Drive mapping
 M584 X0 Y1 Z2:3							                    ; X, Y, 2 x Z
-M671 X-35:535 Y250:250 S2.0 F1.1                ; leadscrews at left and right of X axis, 110% fudge factor
+M671 X-35:535 Y250:250 S2.0 F1.0                ; leadscrews at left and right of X axis, 100% fudge factor
 
 ;----- Drives
 M569 P0 S0										                  ; Physical drive 0 goes backwards - X
