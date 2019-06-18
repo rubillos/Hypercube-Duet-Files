@@ -17,12 +17,15 @@ M586 P1 S1										                  ; Enable FTP
 M586 P2 S1										                  ; Enable Telnet
 
 ;----- Axis Limits
-M208 X0:500 Y0:500 Z0:750			                  ; X range 0 to 500, Y range 0 to 500, Z range 0 to 750
+M208 X0:495 Y0:500 Z0:745			                  ; X range 0 to 490, Y range 0 to 500, Z range 0 to 750
 
 ;----- Bed heater
 M305 P0 T100000 B4138 R4700		                  ; Set thermistor + ADC parameters for heater 0
 M143 H0 S120									                  ; Set temperature limit for heater 0 to 120C
 M307 H0 A107.0 C390.6 D0.9 V0 B0 S1.0           ; set heating parameters
+
+M307 H6 A-1 C-1 D-1                             ; free up heater 6 pin
+M307 H7 A-1 C-1 D-1                             ; free up heater 7 pin
 
 ;----- Built-in temperature sensors
 M305 P100 S"CPU"							                  ; Main CPU
@@ -40,7 +43,7 @@ M106 P8 T35:65 H100:101:102 L0.1 C"Electronics 2"		; Duet cooling set #2
 
 ;----- Drive mapping
 M584 X0 Y1 Z2:3							                    ; X, Y, 2 x Z
-M671 X-30:530 Y250:250 S2.0			                ; leadscrews at left and right of X axis
+M671 X-35:535 Y250:250 S2.0 F1.1                ; leadscrews at left and right of X axis, 110% fudge factor
 
 ;----- Drives
 M569 P0 S0										                  ; Physical drive 0 goes backwards - X
@@ -49,10 +52,10 @@ M569 P2 S0										                  ; Physical drive 2 goes reverse - Z1
 M569 P3 S0										                  ; Physical drive 3 goes reverse - Z2
 
 M350     X16			  Y16			  Z16					      ; Configure microstepping with interpolation
-M92	     X80.00	    Y80.00	Z4000.00            ; Set steps per mm
-M203	X30000.00  Y30000.00	 Z450.00            ; Set maximum speeds (mm/min)
-M201	 X3000.00		Y3000.00	 Z120.00            ; Set accelerations (mm/s^2)
-M566   X1200.00	  Y1200.00	 Z450.00            ; Set maximum instantaneous speed changes (mm/min)
+M92	     X80.00	    Y80.00	 Z400.00            ; Set steps per mm
+M203	X30000.00  Y30000.00	Z6000.00            ; Set maximum speeds (mm/min)
+M201	 X3000.00		Y3000.00	 Z600.00            ; Set accelerations (mm/s^2)
+M566   X1200.00	  Y1200.00	 Z600.00            ; Set maximum instantaneous speed changes (mm/min)
 M906   X1500.00		Y1500.00	Z1500.00 I30	      ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Stepper Brake
