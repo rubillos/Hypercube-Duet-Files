@@ -15,8 +15,8 @@ M906 E1500.00 I30                         ; Set motor currents (mA) and motor id
 
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
-G31 X0 Y0 Z0 P100                         ; No probe offset, set trigger level
-M558 P5 I1 F300 T24000 H3 R0.3            ; Digital probe, inverted trigger, z speed 1000mm/min, travel 2000mm/sec, 3mm dive height
+G31 X0 Y0 Z-0.05 P100                     ; Set probe offset, set trigger level
+M558 P5 I1 F300 T18000 H3 R0.4            ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 3mm dive height, 0.4s delay
 M557 X30:470 Y30:470 S55									; Define mesh grid
 
 ;----- Bed Compensation Taper
@@ -30,7 +30,7 @@ M307 H1 A446.7 C176.3 D5.1 V24.3 B0 S1.0  ; set heating parameters
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Fan 0, off
 ;M106 P2 S0 I0 F500 H-1 C"Air Pump"				; assign air pump to fan 2
-M106 P1 S0 I0 H1 T40 C"Nozzle"		        ; Fan 1, thermostatic, 40º trigger speed
+M106 P1 S1.0 I0 H1 T40 C"Nozzle"		      ; Fan 1, thermostatic, 100% speed above 40º
 
 ;----- Tools
 M563 P0 S"Standard" D0 H1									; Define tool 0
