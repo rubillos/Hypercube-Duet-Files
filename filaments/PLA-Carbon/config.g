@@ -1,0 +1,4 @@
+M140 S60
+G10 P0 S240 R0
+
+M117 "PLA-Carbon: Config"
