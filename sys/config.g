@@ -7,20 +7,15 @@ M83													                    ; ...but relative extruder moves
 M667 S1											                    ; Select CoreXY mode
 
 ;----- Network
-M550 P"Hypercube"											          ; Set machine name
+M550 P"Hypercube"		                            ; Set machine name
 M551 P"***REMOVED***"										          ; Set password
-M552 S1															            ; Enable network
-;M587 S"18th Street Air Net" P"***REMOVED***" 	; Configure access point.
-;M587 S"Hypercube Wifi" P"seattle1"            	; Configure access point.
+M552 P0.0.0.0 S1															  ; Ethernet: Enable network
 M586 P0 S1														          ; Enable HTTP
 M586 P1 S1										                  ; Enable FTP
 M586 P2 S1										                  ; Enable Telnet
 
-;----- Axis Limits
-M208 X0:495 Y0:500 Z0:745			                  ; X range 0 to 490, Y range 0 to 500, Z range 0 to 750
-
 ;----- Bed heater
-M305 P0 T100000 B4138 R4700		                  ; Set thermistor + ADC parameters for heater 0
+M305 P0 T100000 B4138 R4700 S"Heater"           ; Set thermistor + ADC parameters for heater 0
 M143 H0 S120									                  ; Set temperature limit for heater 0 to 120C
 M307 H0 A107.0 C390.6 D0.9 V0 B0 S1.0           ; set heating parameters
 
@@ -35,7 +30,7 @@ M305 P102 S"Drivers Duex5"				              ; Drivers on Duex5
 M912 P0 S-12                                    ; CPU temp calibration
 
 ;----- Fans
-M106 P3 S0.5 I1 H-1 C"Frame Light"							; Frame lights
+M106 P3 S5 I1 H-1 C"Frame Light"							  ; Frame lights
 M106 P4 S1.0 I0 H-1 C"Nozzle Light"							; Nozzle lights
 
 M106 P7 T35:65 H100:101:102 L0.1 C"Electronics 1"		; Duet cooling set #1
@@ -43,7 +38,10 @@ M106 P8 T35:65 H100:101:102 L0.1 C"Electronics 2"		; Duet cooling set #2
 
 ;----- Drive mapping
 M584 X0 Y1 Z2:3							                    ; X, Y, 2 x Z
-M671 X-35:535 Y250:250 S2.0 F1.0                ; leadscrews at left and right of X axis, 100% fudge factor
+M671 X-35:535 Y250:250 S4.0 F1.0                ; leadscrews at left and right of X axis, 100% fudge factor
+
+;----- Axis Limits
+M208 X0:490 Y0:490 Z0:745			                  ; X range 0 to 495, Y range 0 to 500, Z range 0 to 745
 
 ;----- Drives
 M569 P0 S0										                  ; Physical drive 0 goes backwards - X
@@ -71,7 +69,20 @@ M906 A200.0                                     ; enable stepper
 ;----- Endstops
 M574 X1 Y1 S3									                  ; Set XY endstops controlled by motor load detection
 
+;----- Idle Timout
+M84 S30											                    ; Set idle timeout
+
+;----- Activate Z-Axis and release brake
+G91                                             ; relative positioning
+G1 S2 A1 F4000                                  ; force A axis to 'move' a tiny bit to enable it and release brake
+G1 S2 Z0.2 F4000                                ; tiny z move to activate motors
+G90                                             ; absolute positioning
+
+M584 P3                                         ; hide the A axis
+
 ;----- Run tool specific macros
+M550 P"Hypercube - ** NO TOOL HEAD **"		      ; Set machine name in case we have no tool head
+
 M581 T2 E2 S0									                  ; Endstop 2 pulled low indicates Standard setup
 M581 T3 E3 S0									                  ; Endstop 3 pulled low indicates Volcano setup
 M581 T4 E4 S0									                  ; Endstop 4 pulled low indicates Kraken
