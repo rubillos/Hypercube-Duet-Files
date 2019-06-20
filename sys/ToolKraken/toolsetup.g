@@ -16,6 +16,9 @@ M201 E500.00:500.00:500.00:500.00					; Set accelerations (mm/s^2)
 M566 E120.00:120.00:120.00:120.00					; Set maximum instantaneous speed changes (mm/min)
 M906 E1500.00:1500.00:1500.00:1500.00 I30	; Set motor currents (mA) and motor idle factor in percent
 
+;----- Idle Timout
+M84 S30											              ; Set idle timeout
+
 ;----- Z-Probe
 M574 Z1 S2														  	; Set Z endstops controlled by probe
 M558 P5 R0.4 H5 F1200 T9000								; Set Z probe type to effector and the dive height + speeds
@@ -60,21 +63,20 @@ G10 P3 X-10 Y-20 Z0												; Set tool 3 axis offsets
 G10 P3 R0 S0															; Set initial tool 3 active and standby temperatures to 0C
 
 ;----- Filament Sensors
-M591 D0 P2 C3															; filament sensor on E0 endstop input
-M591 D1 P2 C3															; filament sensor on E0 endstop input
-M591 D2 P2 C3													  	; filament sensor on E0 endstop input
-M591 D3 P2 C3													  	; filament sensor on E0 endstop input
+M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
+M591 D1 P1 C3 S1													; filament sensor on E0 endstop input
+M591 D2 P1 C3 S1													; filament sensor on E0 endstop input
+M591 D3 P1 C3 S1													; filament sensor on E0 endstop input
 
 ;----- Pressure Advance
-M572 D0 S0.1														; set pressure advance for extruder 1
-M572 D1 S0.1														; set pressure advance for extruder 2
-M572 D2 S0.1														; set pressure advance for extruder 3
-M572 D3 S0.1														; set pressure advance for extruder 4
+M572 D0 S0.1														  ; set pressure advance for extruder 1
+M572 D1 S0.1														  ; set pressure advance for extruder 2
+M572 D2 S0.1														  ; set pressure advance for extruder 3
+M572 D3 S0.1														  ; set pressure advance for extruder 4
 
 ;----- Filament properties
-M404 N1.75 D0.4													; filament width and nozzle diameter
+M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
 ;----- Finish
-M117 "Setup: Kraken"
-
+M550 P"Hypercube - Kraken"		            ; Set machine name
 M98 P"/sys/finish.g"

@@ -17,6 +17,9 @@ M201 E500.00:500.00:500.00:500.00:500.00				   ; Set accelerations (mm/s^2)
 M566 E120.00:120.00:120.00:120.00:120.00				   ; Set maximum instantaneous speed changes (mm/min)
 M906 E1500.00:1500.00:1500.00:1500.00:1500.00 I30	 ; Set motor currents (mA) and motor idle factor in percent
 
+;----- Idle Timout
+M84 S30											              ; Set idle timeout
+
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstops controlled by probe
 M558 P5 R0.4 H5 F1200 T9000								; Set Z probe type to effector and the dive height + speeds
@@ -61,23 +64,21 @@ G10 P4 R0 S0															; Set initial tool 4 active and standby temperatures 
 M563 P5 S"Mixing" D0:1:2:3:4 H1 F0				; Define tool 5
 G10 P5 X0 Y0 Z0													  ; Set tool 5 axis offsets
 G10 P5 R0 S0															; Set initial tool 5 active and standby temperatures to 0C
-M568 P5 S1															  ; Enable mixing for tool 5
 M567 P5 E0.2:0.2:0.2:0.2:0.2							; Set mixing ratios for tool 5
 
 ;----- Filament Sensors
-M591 D0 C3															  ; filament sensor on E0 endstop input
-M591 D1 C3															  ; filament sensor on E0 endstop input
-M591 D2 C3															  ; filament sensor on E0 endstop input
-M591 D3 C3															  ; filament sensor on E0 endstop input
-M591 D4 C3															  ; filament sensor on E0 endstop input
+M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
+M591 D1 P1 C3 S1													; filament sensor on E0 endstop input
+M591 D2 P1 C3 S1													; filament sensor on E0 endstop input
+M591 D3 P1 C3 S1													; filament sensor on E0 endstop input
+M591 D4 P1 C3 S1													; filament sensor on E0 endstop input
 
 ;----- Pressure Advance
 M572 D0:1:2:3:4 S0.25											; set pressure advance for all 5 extruders
 
 ;----- Filament properties
-M404 N1.75 D0.4													; filament width and nozzle diameter
+M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
 ;----- Finish
-M117 "Setup: Diamond"
-
+M550 P"Hypercube - Diamond"		            ; Set machine name
 M98 P"/sys/finish.g"

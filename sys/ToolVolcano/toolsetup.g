@@ -13,6 +13,9 @@ M201 E3600.00					                    ; Set accelerations (mm/s^2)
 M566 E3600.00					                    ; Set maximum instantaneous speed changes (mm/min)
 M906 E1500.00 I30                         ; Set motor currents (mA) and motor idle factor in percent
 
+;----- Idle Timout
+M84 S30											              ; Set idle timeout
+
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
 G31 X0 Y0 Z-0.05 P100                     ; Set probe offset, set trigger level
@@ -38,7 +41,7 @@ G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
 
 ;----- Filament Sensor
-M591 D0 P2 C3															; filament sensor on E0 endstop input
+M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
 
 ;----- Pressure Advance
 M572 D0 S0.1														  ; set pressure advance to 0.1 seconds
@@ -47,6 +50,5 @@ M572 D0 S0.1														  ; set pressure advance to 0.1 seconds
 M404 N1.75 D1.0													  ; filament width and nozzle diameter
 
 ;----- Finish
-M117 "Setup: Volcano"
-
+M550 P"Hypercube - Volcano"		            ; Set machine name
 M98 P"/sys/finish.g"
