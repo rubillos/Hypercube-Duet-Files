@@ -10,7 +10,8 @@ M400                    ; wait for completion
 G1 S2 Y0.2 F4000        ; tiny move to energize stepper
 M400                    ; wait for completion
 G4 P100                 ; wait
-G1 S3 Y-525 F4000       ; move quickly to Y axis endstop and stop there
+G1 S1 Y-525 F4000       ; move quickly to Y axis endstop and stop there
+G1 Y5                   ; move out 5mm
 G92 Y0                  ; set X to 0
 G1 S2 Z-5 F9000         ; lower Z again
 M400                    ; wait for any moves to finish

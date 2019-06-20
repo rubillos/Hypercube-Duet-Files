@@ -12,8 +12,10 @@ M400                      ; wait for completion
 G1 S2 X0.2 F4000          ; tiny move to energize stepper
 M400                      ; wait for completion
 G4 P100                   ; wait
-G1 S3 X-525 F4000         ; home X axis
-G1 S3 Y-525 F4000         ; home Y axis
+G1 S1 X-525 F4000         ; home X axis
+G1 X5                     ; move out 5mm
+G1 S1 Y-525 F4000         ; home Y axis
+G1 Y5                     ; move out 5mm
 G92 X0 Y0                 ; set X and Y to 0
 M400                      ; wait for any moves to finish
 M913 X100 Y100            ; restore motor currents
