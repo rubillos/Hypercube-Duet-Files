@@ -49,12 +49,13 @@ M569 P1 S0										                  ; Physical drive 1 goes backwards - Y
 M569 P2 S0										                  ; Physical drive 2 goes reverse - Z1
 M569 P3 S0										                  ; Physical drive 3 goes reverse - Z2
 
-M350     X16			  Y16			  Z16					      ; Configure microstepping with interpolation
-M92	     X80.00	    Y80.00	 Z400.00            ; Set steps per mm
-M203	X30000.00  Y30000.00	Z6000.00            ; Set maximum speeds (mm/min)
-M201	 X3000.00		Y3000.00	 Z600.00            ; Set accelerations (mm/s^2)
-M566   X1200.00	  Y1200.00	 Z600.00            ; Set maximum instantaneous speed changes (mm/min)
-M906   X1500.00		Y1500.00	Z1500.00 I30	      ; Set motor currents (mA) and motor idle factor in percent
+M350     X16		Y16		Z16					              ; Configure microstepping with interpolation
+M92	     X80	  Y80	 Z400                       ; Set steps per mm
+M203	X30000 Y30000	Z3000                       ; Set maximum speeds (mm/min)
+M201	 X3000  Y3000	 Z600                       ; Set accelerations (mm/s^2)
+M566   X1200	Y1200	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
+M906   X1500	Y1500	Z1800 I30	                  ; Set motor currents (mA) and motor idle factor in percent
+M917     X80    Y80   Z80                       ; Set standstill current reduction
 
 ;----- Stepper Brake
 M584 A11                                        ; map stepper 11 to A axis
@@ -68,6 +69,7 @@ M906 A200.0                                     ; enable stepper
 
 ;----- Endstops
 M574 X1 Y1 S3									                  ; Set XY endstops controlled by motor load detection
+M574 Z0                                         ; No Z endstop yet
 
 ;----- Idle Timout
 M84 S30											                    ; Set idle timeout
