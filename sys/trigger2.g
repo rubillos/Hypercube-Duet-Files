@@ -1,4 +1,4 @@
-M505 P"/sys/ToolStandard/"
+M505 P"/sys/ToolV6/"
 M98 P"toolsetup.g"
 
 M581 T3 S-1
