@@ -19,7 +19,7 @@ M84 S30											              ; Set idle timeout
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
 G31 X0 Y0 Z-0.05 P100                     ; Set probe offset, set trigger level
-M558 P5 I1 F300 T18000 H4 R0.4            ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 4mm dive height, 0.4s delay
+M558 P5 I1 F300 T18000 H5 R0.4            ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 4mm dive height, 0.4s delay
 M557 X30:470 Y30:470 S55									; Define mesh grid
 
 ;----- Bed Compensation Taper
