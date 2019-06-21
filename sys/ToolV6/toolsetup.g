@@ -1,4 +1,4 @@
-; Standard
+; V6
 
 ;----- Extruder mapping
 M584 E7							                      ; 1 extruder
