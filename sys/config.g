@@ -8,7 +8,7 @@ M667 S1											                    ; Select CoreXY mode
 
 ;----- Network
 M550 P"Hypercube"		                            ; Set machine name
-M551 P"***REMOVED***"										          ; Set password
+;M551 P"***REMOVED***"										          ; Set password
 M552 P0.0.0.0 S1															  ; Ethernet: Enable network
 M586 P0 S1														          ; Enable HTTP
 M586 P1 S1										                  ; Enable FTP
