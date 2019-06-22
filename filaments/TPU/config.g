@@ -1,4 +1,0 @@
-M140 S50
-G10 P0 S230 R0
-
-M117 "TPU: Config"

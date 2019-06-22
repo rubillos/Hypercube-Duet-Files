@@ -1,4 +1,0 @@
-;M140 S60
-;G10 P0 S210 R0
-
-M117 "PLA: Config"
