@@ -85,7 +85,7 @@ M584 P3                                         ; hide the A axis
 ;----- Run tool specific macros
 M550 P"Hypercube - ** NO TOOL HEAD **"		      ; Set machine name in case we have no tool head
 
-M581 T2 E2 S0									                  ; Endstop 2 pulled low indicates Standard setup
+M581 T2 E2 S0									                  ; Endstop 2 pulled low indicates V6
 M581 T3 E3 S0									                  ; Endstop 3 pulled low indicates Volcano setup
 M581 T4 E4 S0									                  ; Endstop 4 pulled low indicates Kraken
 M581 T5 E5 S0									                  ; Endstop 5 pulled low indicates Diamond setup
