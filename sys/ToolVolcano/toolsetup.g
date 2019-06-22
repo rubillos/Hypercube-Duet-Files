@@ -4,7 +4,7 @@
 M584 E7							                      ; 1 extruder
 
 ;----- Extruders
-M569 P7 S1										            ; Physical drive 7 goes forwards - E4
+M569 P7 S1										            ; Physical drive 7 goes forwards
 
 M350 E16 I1					                      ; Configure microstepping with interpolation
 M92 E408.00					                      ; Set steps per mm
@@ -18,7 +18,7 @@ M84 S30											              ; Set idle timeout
 
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
-M558 P5 I1 F300 T18000 H5 R0.5            ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 4mm dive height, 0.4s delay
+M558 P5 I1 F300 T18000 H5 R1.0            ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 4mm dive height, 0.4s delay
 G31 X0 Y0 Z-0.05 P100                     ; Set probe offset, set trigger level
 M557 X0:490 Y0:490 P11									  ; Define mesh grid
 
