@@ -1,1 +1,1 @@
-M999
+M98 P"/sys/reboot.g"
