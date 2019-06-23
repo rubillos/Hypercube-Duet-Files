@@ -31,7 +31,7 @@ M143 H1 S280														  ; Set temperature limit to 280C
 
 
 ;----- Fans
-M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Fan 0, off
+M106 P0 S0 I0 F500 H-1 L0.3 B0.3 C"Part Cooling"		; Fan 0, off, 30% minimum speed, 0.3s 'blip' to start
 ;M106 P2 S0 I0 F500 H-1 C"Air Pump"				; assign air pump to fan 2
 M106 P1 S1.0 I0 H1 T40 L1.0 C"Nozzle"     ; Fan 1, thermostatic, 100% speed above 40º
 
