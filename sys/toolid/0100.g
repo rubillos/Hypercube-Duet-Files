@@ -1,3 +1,3 @@
-M505 P"/sys/ToolKraken"
-M98 P"/sys/toolid/settoolwatch.g"
-M98 P"toolsetup.g"
+M98 P"settoolwatch.g"                   ; set a trigger when any tool ID pin is set
+M505 P"/sys/ToolKraken"                 ; set the tool directory
+M98 P"toolsetup.g"                      ; run tool specific code
