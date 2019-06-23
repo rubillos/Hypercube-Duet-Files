@@ -7,11 +7,11 @@ M584 E7							                      ; 1 extruder
 M569 P7 S1										            ; Physical drive 7 goes forwards
 
 M350 E16 I1					                      ; Configure microstepping with interpolation
-M92 E408.00					                      ; Set steps per mm
-M203 E3600.00				                      ; Set maximum speeds (mm/min)
-M201 E3600.00					                    ; Set accelerations (mm/s^2)
-M566 E3600.00					                    ; Set maximum instantaneous speed changes (mm/min)
-M906 E1500.00 I30                         ; Set motor currents (mA) and motor idle factor in percent
+M92 E408				                          ; Set steps per mm
+M203 E3600			                          ; Set maximum speeds (mm/min)
+M201 E3600				                        ; Set accelerations (mm/s^2)
+M566 E3600				                        ; Set maximum instantaneous speed changes (mm/min)
+M906 E1500 I30                            ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Idle Timout
 M84 S30											              ; Set idle timeout
