@@ -49,7 +49,7 @@ M569 P1 S0										                  ; Physical drive 1 goes backwards - Y
 M569 P2 S0										                  ; Physical drive 2 goes reverse - Z1
 M569 P3 S0										                  ; Physical drive 3 goes reverse - Z2
 
-M350     X16		Y16		Z16					              ; Configure microstepping with interpolation
+M350     X16		Y16		Z16 I1   		              ; Configure microstepping with interpolation
 M92	     X80	  Y80	 Z400                       ; Set steps per mm
 M203	X30000 Y30000	Z3000                       ; Set maximum speeds (mm/min)
 M201	 X3000  Y3000	 Z600                       ; Set accelerations (mm/s^2)
@@ -82,15 +82,6 @@ G90                                             ; absolute positioning
 
 M584 P3                                         ; hide the A axis
 
-;----- Run tool specific macros
-M550 P"Hypercube - ** NO TOOL HEAD **"		      ; Set machine name in case we have no tool head
-
-M581 T2 E2 S0									                  ; Endstop 2 pulled low indicates V6
-M581 T3 E3 S0									                  ; Endstop 3 pulled low indicates Volcano setup
-M581 T4 E4 S0									                  ; Endstop 4 pulled low indicates Kraken
-M581 T5 E5 S0									                  ; Endstop 5 pulled low indicates Diamond setup
-
-M582 T2											                    ; Check for trigger on 2
-M582 T3											                    ; Check for trigger on 3
-M582 T4											                    ; Check for trigger on 4
-M582 T5											                    ; Check for trigger on 5
+;----- Configure Installed Tool
+M505 P"toolid"
+M98 P"tools.g"
