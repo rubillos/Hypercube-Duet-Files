@@ -18,8 +18,9 @@ M305 P0 T100000 B4138 R4700 S"Heater"           ; Set thermistor + ADC parameter
 M143 H0 S120									                  ; Set temperature limit for heater 0 to 120C
 M307 H0 A107.0 C390.6 D0.9 V0 B0 S1.0           ; set heating parameters
 
-M307 H6 A-1 C-1 D-1                             ; free up heater 6 pin
-M307 H7 A-1 C-1 D-1                             ; free up heater 7 pin
+;----- PWM Pins
+M307 H6 A-1 C-1 D-1                             ; free up heater 6 pin - PWM4
+M307 H7 A-1 C-1 D-1                             ; free up heater 7 pin - PWM5
 
 ;----- Built-in temperature sensors
 M305 P100 S"CPU"							                  ; Main CPU
