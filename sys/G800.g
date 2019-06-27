@@ -6,7 +6,7 @@ M116                          ; wait for temperature
 G60 S0                        ; save the current nozzle location
 G91                           ; relative moves
 G1 Z50 F1000                  ; move the bed down
-M280 P6 S200                  ; extend cleaning bucket
+G802                          ; extend purge bucket
 G4 P500                       ; wait
 
 ;----- Move nozzle
@@ -34,7 +34,7 @@ G1 X0 Y300 F18000
 M400
 
 ;----- Back to printing
-M280 P6 S120                    ; retract bucket
+G801                            ; retract purge bucket
 G4 P500                         ; wait
 M42 P6 S0                       ; disable servo
 G0 R0 X0 Y0 Z0                  ; restore nozzle positioning
