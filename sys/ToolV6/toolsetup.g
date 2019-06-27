@@ -28,7 +28,7 @@ M376 H5                                   ; reduce over 5mm
 ;----- Heater
 M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
 M143 H1 S280														  ; Set temperature limit to 280C
-M307 H1 A446.7 C176.3 D5.1 V24.3 B0 S1.0  ; set heating parameters
+M307 H1 A338.0 C133.1 D4.6 V24.2 B0 S1.0  ; set heating parameters
 
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 L0.3 B0.3 C"Part Cooling"		; Fan 0, off, 30% minimum speed, 0.3s 'blip' to start
@@ -45,7 +45,7 @@ M572 D0 S0.2                              ; Pressure advance to 0.2
 M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
 
 ;----- Pressure Advance
-M572 D0 S0.4														  ; set pressure advance to 0.4 seconds
+M572 D0 S0.1														  ; set pressure advance to 0.4 seconds
 
 ;----- Filament properties
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
