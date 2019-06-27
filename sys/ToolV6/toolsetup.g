@@ -1,4 +1,5 @@
 ; V6
+M550 P"Hypercube - V6"		                ; Set machine name
 
 ;----- Extruder mapping
 M584 E7							                      ; 1 extruder
@@ -51,5 +52,4 @@ M572 D0 S0.1														  ; set pressure advance to 0.4 seconds
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
 ;----- Finish
-M550 P"Hypercube - V6"		                ; Set machine name
 M98 P"/sys/finish.g"

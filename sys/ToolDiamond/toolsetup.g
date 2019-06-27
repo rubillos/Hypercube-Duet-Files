@@ -1,5 +1,7 @@
 ; Diamond
 
+M550 P"Hypercube - Diamond"		            ; Set machine name
+
 ;----- Extruder mapping
 M584 E5:6:7:8:9							              ; 5 extruders
 
@@ -80,5 +82,4 @@ M572 D0:1:2:3:4 S0.4											; set pressure advance for all 5 extruders
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
 ;----- Finish
-M550 P"Hypercube - Diamond"		            ; Set machine name
 M98 P"/sys/finish.g"

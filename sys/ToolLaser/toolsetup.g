@@ -1,3 +1,5 @@
+; Laser Engraver
+
 M550 P"Hypercube - Laser"	              	      ; Set machine name
 
 ;----- Set up laser
@@ -12,5 +14,4 @@ M563 P0 S"Laser"      									        ; Define tool 0
 G10 P0 X0 Y0 Z0													        ; Set tool 0 axis offsets
 
 ;----- Finish
-M550 P"Hypercube - Laser Engraver"		          ; Set machine name
 M98 P"/sys/finish.g"

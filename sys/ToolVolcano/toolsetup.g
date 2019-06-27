@@ -1,4 +1,5 @@
 ; Volcano
+M550 P"Hypercube - Volcano"		            ; Set machine name
 
 ;----- Extruder mapping
 M584 E7							                      ; 1 extruder
@@ -51,5 +52,4 @@ M572 D0 S0.1														  ; set pressure advance to 0.1 seconds
 M404 N1.75 D1.0													  ; filament width and nozzle diameter
 
 ;----- Finish
-M550 P"Hypercube - Volcano"		            ; Set machine name
 M98 P"/sys/finish.g"

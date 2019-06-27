@@ -1,7 +1,8 @@
 ; Kraken
+M550 P"Hypercube - Kraken"		            ; Set machine name
 
 ;----- Extruder mapping
-M584 E5:6:7:8				          ; 4 extruders
+M584 E5:6:7:8				                      ; 4 extruders
 
 ;----- Drives
 M569 P5 S1										            ; Physical drive 5 goes forwards - E2
