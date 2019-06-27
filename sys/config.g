@@ -13,6 +13,9 @@ M586 P0 S1														          ; Enable HTTP
 M586 P1 S1										                  ; Enable FTP
 M586 P2 S1										                  ; Enable Telnet
 
+;----- Purge Bucket
+G801                                            ; retract purge bucket
+
 ;----- Bed heater
 M305 P0 T100000 B4138 R4700 S"Heater"           ; Set thermistor + ADC parameters for heater 0
 M143 H0 S120									                  ; Set temperature limit for heater 0 to 120C
