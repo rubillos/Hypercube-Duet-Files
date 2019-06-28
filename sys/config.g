@@ -22,6 +22,9 @@ M307 H0 A107.0 C390.6 D0.9 V0 B0 S1.0           ; set heating parameters
 M307 H6 A-1 C-1 D-1                             ; free up heater 6 pin - PWM4
 M307 H7 A-1 C-1 D-1                             ; free up heater 7 pin - PWM5
 
+;----- Purge Bucket
+M280 P6 S177                                    ; retract purge bucket
+
 ;----- Built-in temperature sensors
 M305 P100 S"CPU"							                  ; Main CPU
 M305 P101 S"Drivers Duet"			                  ; Drivers on Duet
@@ -81,9 +84,6 @@ G1 S2 Z0.2 F4000                                ; tiny z move to activate motors
 G90                                             ; absolute positioning
 
 M584 P3                                         ; hide the A axis
-
-;----- Purge Bucket
-M280 P6 S177                                    ; retract purge bucket
 
 ;----- Configure Installed Tool
 M505 P"toolid"
