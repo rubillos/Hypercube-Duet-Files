@@ -40,13 +40,10 @@ M106 P1 S1.0 I0 H1 T40 L1.0 C"Nozzle"     ; Fan 1, thermostatic, 100% speed abov
 M563 P0 S"V6" D0 H1									      ; Define tool 0
 G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
-M572 D0 S0.2                              ; Pressure advance to 0.2
+M572 D0 S0.1                              ; Pressure advance to 0.1
 
 ;----- Filament Sensor
 M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
-
-;----- Pressure Advance
-M572 D0 S0.1														  ; set pressure advance to 0.4 seconds
 
 ;----- Filament properties
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
