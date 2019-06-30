@@ -9,9 +9,9 @@ M569 P7 S1										            ; Physical drive 7 goes forwards
 
 M350 E16 I1					                      ; Configure microstepping with interpolation
 M92 E408				                          ; Set steps per mm
-M203 E3600			                          ; Set maximum speeds (mm/min)
-M201 E3600				                        ; Set accelerations (mm/s^2)
-M566 E3600				                        ; Set maximum instantaneous speed changes (mm/min)
+M203 E6000			                          ; Set maximum speeds (mm/min)
+M201 E1200				                        ; Set accelerations (mm/s^2)
+M566 E600	  			                        ; Set maximum instantaneous speed changes (mm/min)
 M906 E1500 I30                            ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Idle Timout
@@ -19,7 +19,7 @@ M84 S30											              ; Set idle timeout
 
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
-M558 P5 I1 F300 T18000 H5 R1.0            ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 4mm dive height, 0.4s delay
+M558 P5 I1 F300 T18000 H4 R0.6            ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 4mm dive height, 0.6s delay
 G31 X0 Y0 Z-0.05 P100                     ; Set probe offset, set trigger level
 M557 X30:470 Y30:470 P8									  ; Define mesh grid
 
@@ -40,7 +40,7 @@ M106 P1 S1.0 I0 H1 T40 L1.0 C"Nozzle"     ; Fan 1, thermostatic, 100% speed abov
 M563 P0 S"V6" D0 H1									      ; Define tool 0
 G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
-M572 D0 S0.1                              ; Pressure advance to 0.1
+M572 D0 S0.2                              ; Pressure advance to 0.2
 
 ;----- Filament Sensor
 M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
