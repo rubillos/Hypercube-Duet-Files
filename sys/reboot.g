@@ -1,5 +1,5 @@
 M84 A                         ; engage Z brake
-G4 P200                       ; wait
+G4 P300                       ; wait
 M84                           ; stop all other steppers
 ; M552 S0                       ; shut down networking
 M106 P3 S0.01                 ; dim frame lights
