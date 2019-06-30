@@ -17,6 +17,7 @@ M586 P2 S1										                  ; Enable Telnet
 M305 P0 T100000 B4138 R4700 S"Heater"           ; Set thermistor + ADC parameters for heater 0
 M143 H0 S120									                  ; Set temperature limit for heater 0 to 120C
 M307 H0 A107.0 C390.6 D0.9 V0 B0 S1.0           ; set heating parameters
+M307 H0 B1                                      ; Bang Bang heating for now
 
 ;----- PWM Pins
 M307 H6 A-1 C-1 D-1                             ; free up heater 6 pin - PWM4
@@ -36,8 +37,8 @@ M912 P0 S-12                                    ; CPU temp calibration
 M106 P3 S5 I1 H-1 C"Frame Light"							  ; Frame lights
 M106 P4 S1.0 I0 H-1 C"Nozzle Light"							; Nozzle lights
 
-M106 P7 T35:65 H100:101:102 L0.1 C"Electronics 1"		; Duet cooling set #1
-M106 P8 T35:65 H100:101:102 L0.1 C"Electronics 2"		; Duet cooling set #2
+M106 P7 T30 H100:101:102 L0.3 C"Electronics 1"  ; Duet cooling set #1
+M106 P8 T30 H100:101:102 L0.3 C"Electronics 2"	; Duet cooling set #2
 
 ;----- Drive mapping
 M584 X0 Y1 Z2:3							                    ; X, Y, 2 x Z
@@ -58,7 +59,8 @@ M203	X30000 Y30000	Z3000                       ; Set maximum speeds (mm/min)
 M201	 X3000  Y3000	 Z600                       ; Set accelerations (mm/s^2)
 M566   X1200	Y1200	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
 M906   X1500	Y1500	Z1800 I30	                  ; Set motor currents (mA) and motor idle factor in percent
-M917     X80    Y80   Z80                       ; Set standstill current reduction
+
+M917    X100   Y100   Z80                       ; Set standstill current reduction
 
 ;----- Stepper Brake
 M584 A11                                        ; map stepper 11 to A axis
