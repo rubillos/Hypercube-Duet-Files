@@ -1,8 +1,8 @@
-M291 P"Heating Nozzle..." R"Unloading PLA+" T5  ; Display message
+M291 P"Heating Nozzle..." R"Unloading PLA+" T30           ; Display message
 G10 S220                                        ; Set current tool temperature to 220C
 M116                                            ; Wait for the temperatures to be reached
 
-M291 P"Retracting from nozzle..." R"Unloading PLA+" T5  ; Display new message
+M291 P"Retracting from nozzle..." R"Unloading PLA+" T10  ; Display new message
 
 M98 P"/sys/extrude-unload.g"                    ; use standardized unloading
 

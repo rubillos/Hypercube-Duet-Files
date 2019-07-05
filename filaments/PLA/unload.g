@@ -1,4 +1,4 @@
-M291 P"Heating Nozzle..." R"Unloading PLA" T5   ; Display message
+M291 P"Heating Nozzle..." R"Unloading PLA" T30  ; Display message
 G10 S200                                        ; Set current tool temperature to 220C
 M116                                            ; Wait for the temperatures to be reached
 

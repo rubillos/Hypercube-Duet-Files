@@ -1,5 +1,3 @@
-G10 S200                                        ; Set current tool temperature to 220C
-
 M291 S3 P"Load filament into extruder" R"PLA" T5   ; Wait for OK
 
 M291 P"Heating Nozzle..." R"PLA" T5             ; Display message
