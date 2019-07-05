@@ -33,12 +33,16 @@ M305 P102 S"Drivers Duex5"				              ; Drivers on Duex5
 
 M912 P0 S-12                                    ; CPU temp calibration
 
+;----- Cooling Water
+M305 P150 X6 T100000 B4138 R4700 S"Water Temp"	; Virtual heater on water system - set thermistor + ADC parameters
+M106 P6 T30:35 H150 L0.3 C"Water Cooling"	      ; Water system radiator fan
+
 ;----- Fans
 M106 P3 S5 I1 H-1 C"Frame Light"							  ; Frame lights
 M106 P4 S1.0 I0 H-1 C"Nozzle Light"							; Nozzle lights
 
-M106 P7 T30 H100:101:102 L0.3 C"Electronics 1"  ; Duet cooling set #1
-M106 P8 T30 H100:101:102 L0.3 C"Electronics 2"	; Duet cooling set #2
+M106 P7 T20:30 H100:101:102 L0.5 C"Electronics 1" ; Duet cooling set #1
+M106 P8 T20:30 H100:101:102 L0.5 C"Electronics 2"	; Duet cooling set #2
 
 ;----- Drive mapping
 M584 X0 Y1 Z2:3							                    ; X, Y, 2 x Z

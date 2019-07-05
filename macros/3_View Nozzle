@@ -1,0 +1,2 @@
+G90                      ; absolute
+G1 X410 Y60 F24000       ; move
