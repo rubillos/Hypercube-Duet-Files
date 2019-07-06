@@ -4,7 +4,7 @@
 G90													                    ; Send absolute coordinates...
 M83													                    ; ...but relative extruder moves
 
-M667 S1											                    ; Select CoreXY mode
+M669 K1											                    ; Select CoreXY mode
 
 ;----- Network
 M550 P"Hypercube"		                            ; Set machine name
@@ -62,19 +62,19 @@ M92	     X80	  Y80	 Z400                       ; Set steps per mm
 M203	X30000 Y30000	Z3000                       ; Set maximum speeds (mm/min)
 M201	 X3000  Y3000	 Z600                       ; Set accelerations (mm/s^2)
 M566   X1200	Y1200	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
-M906   X1500	Y1500	Z1800 I30	                  ; Set motor currents (mA) and motor idle factor in percent
+M906   X1500	Y1500	Z1800 I10	                  ; Set motor currents (mA) and motor idle factor in percent
 
-M917    X100   Y100   Z80                       ; Set standstill current reduction
+M917     X70    Y70   Z40                       ; Set standstill current reduction
 
 ;----- Stepper Brake
 M584 A11                                        ; map stepper 11 to A axis
 M569 P11 R1                                     ; set enable to active high
 
-M92 A80.00                                      ; dummy steps/mm
+M92 A80                                         ; dummy steps/mm
 M203 A360                                       ; dummy max speed
-M201 A120.00                                    ; dummy acceleration
-M566 A24.00                                     ; dummy jerk
-M906 A200.0                                     ; enable stepper
+M201 A120                                       ; dummy acceleration
+M566 A24                                        ; dummy jerk
+M906 A200                                       ; enable stepper
 
 ;----- Endstops
 M574 X1 Y1 S3									                  ; Set XY endstops controlled by motor load detection
@@ -85,8 +85,10 @@ M84 S30											                    ; Set idle timeout
 
 ;----- Activate Z-Axis and release brake
 G91                                             ; relative positioning
-G1 S2 A1 F4000                                  ; force A axis to 'move' a tiny bit to enable it and release brake
 G1 S2 Z0.2 F4000                                ; tiny z move to activate motors
+M400
+G4 100                                          ; small delay
+G1 S2 A1 F4000                                  ; force A axis to 'move' a tiny bit to enable it and release brake
 G90                                             ; absolute positioning
 
 M584 P3                                         ; hide the A axis

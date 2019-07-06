@@ -1,13 +1,5 @@
 M291 S3 P"Load filament into extruder" R"Loading TPU"   ; Wait for OK
-
-M291 P"Heating Nozzle..." R"Loading TPU" T30    ; Display message
-M116                                            ; Wait for the temperatures to be reached
-
-M291 P"Feeding filament..." R"Loading TPU" T5   ; Display new message
-
-M98 P"/sys/extrude-load.g"                      ; use standardized loading
-
-M400                                            ; Wait for moves to complete
-G10 S0                                          ; Turn off heater
-
-M291 S2 P"Filament Loaded" R"Loading TPU"       ; Ok for completion
+G10 S230                                        ; Set current tool temperature
+M140 S0                                         ; bed temp to 0
+M291 P"Heating Nozzle..." R"Loading TPU" T300   ; Display message
+M98 P"/macros/extrude_load.g"                   ; use standardized loading

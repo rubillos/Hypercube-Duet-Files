@@ -2,7 +2,13 @@
 
 ;----- home X & Y
 G91                           ; relative positioning
+M584 P4                       ; show the A axis
+G1 S2 Z0.1 F4000              ; tiny z move to activate motors
+M400
+G4 100                        ; small delay
+G1 S2 A1 F4000                ; force A axis to 'move' a tiny bit to enable it and release brake
 M400                          ; wait for any moves to finish
+M584 P3                       ; hide the A axis
 M913 X50 Y50                  ; reduce XY motor current to 50% to prevent belts slipping
 M915 X Y S4 R0 F0             ; enable stall detection
 M201 X200.00 Y200.00          ; reduce acceleration

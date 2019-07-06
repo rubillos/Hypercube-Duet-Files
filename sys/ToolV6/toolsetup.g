@@ -2,17 +2,21 @@
 M550 P"Hypercube - V6"		                ; Set machine name
 
 ;----- Extruder mapping
-M584 E7							                      ; 1 extruder
+M584 E7	U7						                    ; 1 extruder, 1 virtual axis for load/unload
 
 ;----- Extruders
 M569 P7 S1										            ; Physical drive 7 goes forwards
 
-M350 E16 I1					                      ; Configure microstepping with interpolation
-M92 E408				                          ; Set steps per mm
-M203 E6000			                          ; Set maximum speeds (mm/min)
-M201 E1200				                        ; Set accelerations (mm/s^2)
-M566 E600	  			                        ; Set maximum instantaneous speed changes (mm/min)
-M906 E1500 I30                            ; Set motor currents (mA) and motor idle factor in percent
+M350 E16 U16 I1					                  ; Configure microstepping with interpolation
+M92 E408 U408				                      ; Set steps per mm
+M203 E6000 U6000			                    ; Set maximum speeds (mm/min)
+M201 E1200 U1200				                  ; Set accelerations (mm/s^2)
+M566 E600	U600  			                    ; Set maximum instantaneous speed changes (mm/min)
+M906 E1500 U1500 I10                      ; Set motor currents (mA) and motor idle factor in percent
+
+;----- Virtual Load/Unload axis
+M574 U1 S0 C4                             ; active low, E1 input
+M584 P3                                   ; hide virtual axis
 
 ;----- Idle Timout
 M84 S30											              ; Set idle timeout
@@ -28,7 +32,7 @@ M376 H5                                   ; reduce over 5mm
 
 ;----- Heater
 M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
-M143 H1 S260														  ; Set temperature limit to 280C
+M143 H1 S260														  ; Set temperature limit
 M307 H1 A338.0 C133.1 D4.6 V24.2 B0 S1.0  ; set heating parameters
 
 ;----- Fans
