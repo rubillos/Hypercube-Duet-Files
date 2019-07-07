@@ -62,7 +62,7 @@ M92	     X80	  Y80	 Z400                       ; Set steps per mm
 M203	X30000 Y30000	Z3000                       ; Set maximum speeds (mm/min)
 M201	 X3000  Y3000	 Z600                       ; Set accelerations (mm/s^2)
 M566   X1200	Y1200	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
-M906   X1500	Y1500	Z1800 I10	                  ; Set motor currents (mA) and motor idle factor in percent
+M906   X1500	Y1500	Z1500 I10	                  ; Set motor currents (mA) and motor idle factor in percent
 
 M917     X70    Y70   Z40                       ; Set standstill current reduction
 
