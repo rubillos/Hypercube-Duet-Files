@@ -1,0 +1,10 @@
+M290 R0 S0                    ; reset baby-stepping
+M300 S700 P700                ; beep
+M291 S3 P"Check nozzle, then press OK..." R"Bed Mesh"   ; Wait for OK
+M291 P"Measuring..." R"Bed Mesh" T300  ; Display message
+G28                           ; home XYZ
+G29                           ; measure the bed mesh
+M374 P"/sys/heightmap.csv"    ; save it where DWC can find it
+G90                           ; absolute positioning
+G1 X250 Y250 F24000           ; go to middle of bed
+M291 P"Measurements Complete" R"Bed Mesh" T5  ; Display message

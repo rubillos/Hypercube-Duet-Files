@@ -1,5 +1,0 @@
-G28                           ; home XYZ
-G29                           ; measure the bed mesh
-M374 P"/sys/heightmap.csv"    ; save it where DWC can find it
-G90                           ; absolute positioning
-G1 X250 Y250 F24000           ; go to middle of bed
