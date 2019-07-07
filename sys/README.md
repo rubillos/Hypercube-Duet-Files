@@ -1,9 +1,5 @@
 # Configuration Info
 
-
-
-
-
 #----- Macros
 purge_and_prepare.g - Purge bucket procedure
 bucket_retract.g - Retract purge bucket
@@ -19,7 +15,7 @@ T0 ; select tool 0
 G10 S140 ; preheat extruder not enough to melt filament
 M140 S[bed0_temperature] ; set bed temp no wait
 M98 P"/macros/home_and_level.g"
-M109 S[extruder0_temperature] ; wait for extruder temp
+G10 S[extruder0_temperature] ; set extruder temp
 M98 P"/macros/purge_and_prepare.g"
 
 #----- Ending Code for Slicer
@@ -27,5 +23,12 @@ M104 S0 ; turn off extruder
 M140 S0 ; turn off bed
 M106 S0 ; fan off
 M98 P"/macros/present_print.g"
-M84 ; disable motors
 M0 ; finish
+
+#----- Settings for S3D for Firmware Retraction
+Retraction Distance: 0.10mm
+Retraction Speed: 66.6mm/s
+
+#----- Script for S3D for Firmware Retraction
+{REPLACE "G1 E-0.1000 F3996" "G10"}
+{REPLACE "G1 E0.0000 F3996" "G11"}
