@@ -39,12 +39,18 @@ M143 H3 S280														  ; Set temperature limit to 280C
 M305 P4 T100000 B4138 R4700 S"4"				  ; Set thermistor + ADC parameters
 M143 H4 S280														  ; Set temperature limit to 280C
 
+;----- Virtual Heater
+M305 P800 X7 S"Water Radiator"            ; Thermistor on water radiator
+
 ;----- Fans
-M106 P0 S0 I0 F500 H-1 C"Part Cooling"					; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
+M106 P0 S0 I0 F500 H-1 C"Part Cooling"		; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
 ;M106 P2 S0 I0 F500 H-1 C"Air Pump"
 
-M106 P5 S0 I0 H2:3:4:5 T45  C"Water Pump"
-M106 P6 S0 I0 H2:3:4:5 T45  C"Water Cooling"
+M106 P5 S0 I0 H1:2:3:4 T40 C"Water Pump"  ; water pump activates with hot end heat
+M106 P6 S1.0 I0 H800 T35:40 C"Water Cooling" ; fan activates when radiator heats up
+
+M106 P7 S1.0 T38 H1:2:3:4:100:101:102     ; Use hot end temp for electronics cooling trigger
+M106 P8 S1.0 T38 H1:2:3:4:100:101:102
 
 ;----- Tools
 M563 P0 S"Kraken 1" D0 H1 F0							; Define tool 0

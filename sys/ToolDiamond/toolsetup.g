@@ -35,12 +35,18 @@ M376 H5                                   ; reduce over 5mm
 M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
 M143 H1 S280														  ; Set temperature limit to 280C
 
+;----- Virtual Heater
+M305 P800 X7 S"Water Radiator"            ; Thermistor on water radiator
+
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 L0.3 B0.3 C"Part Cooling"		; Fan 0, off, 30% minimum speed, 0.3s 'blip' to start
 ;M106 P2 S0 I0 F500 H-1 C"Air Pump"
 
-M106 P5 S0 I0 H2 T45  C"Water Pump"
-M106 P6 S0 I0 H2 T45  C"Water Cooling"
+M106 P5 S0 I0 H1 T40 C"Water Pump"        ; water pump activates with hot end heat
+M106 P6 S1.0 I0 H800 T35:40 C"Water Cooling" ; fan activates when radiator heats up
+
+M106 P7 S1.0 T38 H1:100:101:102           ; Use hot end temp for electronics cooling trigger
+M106 P8 S1.0 T38 H1:100:101:102
 
 ;----- Tools
 M563 P0 S"Cyan" D0 H1 F0									; Define tool 0
