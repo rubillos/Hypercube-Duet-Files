@@ -60,12 +60,7 @@ M42 P6 S0                     ; disable servo
 G90                           ; absolute
 G1 X410 Y60 F24000            ; put nozzle in plain view
 
-M300 S1000 P200               ; make some noise
-M300 S800 P200
-M300 S1000 P200
-M300 S800 P200
-M300 S1000 P200
-M300 S800 P200
+M300 S700 P700                ; beep
 
 M291 S3 P"Check nozzle..." R"Ready to Print"   ; Wait for OK
 
