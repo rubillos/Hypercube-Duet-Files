@@ -37,6 +37,9 @@ M106 P0 S0 I0 F500 H-1 L0.3 B0.3 C"Part Cooling"		; Fan 0, off, 30% minimum spee
 ;M106 P2 S0 I0 F500 H-1 C"Air Pump"				; assign air pump to fan 2
 M106 P1 S1.0 I0 H1 T40 L1.0 C"Nozzle"     ; Fan 1, thermostatic, 100% speed above 40º
 
+M106 P7 S1.0 T38 H1:100:101:102           ; Use hot end temp for electronics cooling trigger
+M106 P8 S1.0 T38 H1:100:101:102
+
 ;----- Tools
 M563 P0 S"V6" D0 H1									      ; Define tool 0
 G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
