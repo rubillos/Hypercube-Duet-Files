@@ -1,10 +1,7 @@
 # Hypercube Evolution + Duet Ethernet Configuration Files
-These files support a Hypercube Evolution printer with a build size of 500x500x750.
+These files are for Hypercube Evolution printer. A Duex 5 expansion board is used to support all of the hardware associated with the machine.
 
 ![Hypercube](images/Hypercube.jpg)
-
-# Hypercube Evolution + Duet Ethernet Configuration Files
-These files are for Hypercube Evolution printer. A Duex 5 expansion board is used to support all of the hardware associated with the machine.
 
 ### Machine Features via Duet
 - 500mm x 500mm x 750mm build size.
@@ -73,7 +70,7 @@ M0 ; finish
 ```
 
 ### Settings for S3D for Firmware Retraction
-These two settings are a bit of a hack. They generate easily recognized gcodes which are translated by the lines below into the proper gcodes for firmware retraction which is handled by the Duet.
+These two settings are a bit of a hack. They generate easily recognized gcodes which are translated by Simplify3D with the lines below into the proper gcodes for firmware retraction which is handled by the Duet. Using a small retraction distance doesn't confuse the speed color coding in Simplify3D's gcode viewer.
 - Retraction Distance: 0.10mm  
 - Retraction Speed: 66.6mm/s
 
@@ -82,3 +79,12 @@ These two settings are a bit of a hack. They generate easily recognized gcodes w
 {REPLACE "G1 E-0.1000 F3996" "G10"}  
 {REPLACE "G1 E0.0000 F3996" "G11"}
 ```
+
+## Development tools
+- gcode was all developed on a Mac using the Atom IDE.
+- Git is used to manage changes.
+- Files are pushed to the Duet using GoodSync.
+  - Originally used a Duet Wifi but it seemed to have issues with the dense Wifi environment it was in.
+  - Duet Ethernet is much more reliable.
+  - GoodSync can be set to use file checksums to verify differences. It was reliable even with the Duet Wifi's issues.
+  - Termius is used for Telnet connections directly to the Duet.
