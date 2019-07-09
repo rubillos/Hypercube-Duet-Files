@@ -30,7 +30,7 @@ These files are for Hypercube Evolution printer. A Duex 5 expansion board is use
 - Physical button mounted to frame to stop filament feed during filament loading.
 
 ### Additional Features
-- 5 filament sensors connected through an Arduino that maps the active filaments for the current tool head.
+- 5 filament sensors connected through an Arduino that maps the active filaments for the current tool head. Allows me to use a single input for filament monitoring.
 - Arduino with a "time of flight" distance sensor below the bed which controls a vertical light strip running down the frame to only illuminate LEDs above the bed surface. Tracks as the bed moves down.
 - Raspberry Pi 3 with Camera that connects to the Duet via Telnet.
   - Watches the printer status, starts recording images when a print begins.
@@ -73,6 +73,7 @@ M0 ; finish
 ```
 
 ### Settings for S3D for Firmware Retraction
+These two settings are a bit of a hack. They generate easily recognized gcodes which are translated by the lines below into the proper gcodes for firmware retraction which is handled by the Duet.
 - Retraction Distance: 0.10mm  
 - Retraction Speed: 66.6mm/s
 
