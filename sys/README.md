@@ -15,11 +15,10 @@ T0 ; select tool 0
 G10 S140 ; preheat extruder not enough to melt filament
 M140 S[bed0_temperature] ; set bed temp no wait
 M98 P"/macros/home_and_level.g"
-G10 S[extruder0_temperature] ; set extruder temp
 M98 P"/macros/purge_and_prepare.g"
 
 #----- Ending Code for Slicer
-M104 S0 ; turn off extruder
+G10 S0 ; turn off extruder
 M140 S0 ; turn off bed
 M106 S0 ; fan off
 M98 P"/macros/present_print.g"
