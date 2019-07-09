@@ -10,9 +10,9 @@ M569 P7 S1										            ; Physical drive 7 goes forwards
 M350 E16 U16 I1					                  ; Configure microstepping with interpolation
 M92 E408 U408				                      ; Set steps per mm
 M203 E6000 U6000			                    ; Set maximum speeds (mm/min)
-M201 E1200 U1200				                  ; Set accelerations (mm/s^2)
-M566 E600	U600  			                    ; Set maximum instantaneous speed changes (mm/min)
-M906 E1500 U1500 I10                      ; Set motor currents (mA) and motor idle factor in percent
+M201 E1300 U1300				                  ; Set accelerations (mm/s^2)
+M566 E700	U700  			                    ; Set maximum instantaneous speed changes (mm/min)
+M906 E1200 U1200 I10                      ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Virtual Load/Unload axis
 M574 U1 S0 C4                             ; active low, E1 input
@@ -23,9 +23,9 @@ M84 S30											              ; Set idle timeout
 
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
-M558 P5 I1 F300 T24000 H4 R0.6            ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 4mm dive height, 0.6s delay
-G31 X0 Y0 Z-0.00 P100                     ; Set probe offset, set trigger level
-M557 X30:470 Y30:470 P13									; Define mesh grid
+M558 P5 I1 F300 T24000 H4 R0.6 A7 S0.03   ; Digital probe, inverted trigger, z speed 300mm/min, travel 24000mm/sec, 4mm dive height, 0.6s delay, max 7 tries, max delta 0.03
+G31 X0 Y0 Z0.06 P100                      ; Set probe offset, set trigger level
+M557 X30:470 Y30:470 P9									  ; Define mesh grid
 
 ;----- Bed Compensation Taper
 M376 H5                                   ; reduce over 5mm
@@ -47,7 +47,7 @@ M106 P8 S1.0 T38 H1:100:101:102
 M563 P0 S"V6" D0 H1									      ; Define tool 0
 G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
-M572 D0 S0.3                              ; Pressure advance
+M572 D0 S0.25                             ; Pressure advance
 
 ;----- Filament Sensor
 M591 D0 P1 C3 S1													; filament sensor on E0 endstop input

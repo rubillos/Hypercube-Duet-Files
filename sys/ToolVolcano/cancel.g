@@ -1,2 +1,2 @@
 ; call version in /sys
-M98 P"/sys/stop.g"
+M98 P"/sys/cancel.g"
