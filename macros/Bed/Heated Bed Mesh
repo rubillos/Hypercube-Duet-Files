@@ -1,13 +1,16 @@
 M290 R0 S0                    ; reset baby-stepping
 T0                            ; Tool 0
+M290 R0 S0                    ; reset baby-stepping
 M291 P"Heating Nozzle and Bed..." R"Bed Mesh" T300  ; Display message
 G10 S140                      ; preheat extruder not enough to melt filament
 M140 S60                      ; set bed temp no wait
 M116                          ; wait for temp
 M300 S700 P700                ; beep
-M291 S3 P"Check nozzle, then press OK..." R"Bed Mesh"   ; Wait for OK
-M291 P"Measuring..." R"Bed Mesh" T300  ; Display message
+G92 Z0                        ; mark Z at 0 so we are allowed to move the bed down
+M291 S2 Z1 P"Check nozzle, then press OK..." R"Bed Mesh"   ; Wait for OK
+M291 P"Homing XYZ..." R"Bed Mesh" T300  ; Display message
 G28                           ; home XYZ
+M291 P"Measuring..." R"Bed Mesh" T300  ; Display message
 G29                           ; measure the bed mesh
 M374 P"/sys/heightmap.csv"    ; save it where DWC can find it
 G90                           ; absolute positioning
