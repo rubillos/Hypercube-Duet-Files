@@ -12,8 +12,8 @@ M584 P3                       ; hide the A axis
 G1 Z4 F9000 S2                ; lift Z relative to current position
 G90                           ; absolute positioning
 G1 X250 Y250 F9000            ; go to middle of bed
-M558 F2000                    ; do fast probes
+M558 F2000 A1                 ; do fast probes
 G30                           ; home Z by probing the bed
-M558 F300                     ; do slow probes
+M558 F300 A7                  ; do slow probes
 G30                           ; home Z by probing the bed
 G29 S1 P"/sys/heightmap.csv"  ; enable bed compensation
