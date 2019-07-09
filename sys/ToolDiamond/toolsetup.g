@@ -1,4 +1,5 @@
 ; Diamond
+;******************** PLACEHOLDER - NOT YET TESTED ************************
 
 M550 P"Hypercube - Diamond"		            ; Set machine name
 

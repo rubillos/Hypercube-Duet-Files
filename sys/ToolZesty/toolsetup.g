@@ -1,4 +1,5 @@
 ; Zesty Nimble Extruder with V6
+;******************** PLACEHOLDER - NOT YET TESTED ************************
 
 M550 P"Hypercube - Zesty"	              	; Set machine name
 

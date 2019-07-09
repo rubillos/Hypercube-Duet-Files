@@ -1,4 +1,6 @@
 ; Volcano
+;******************** PLACEHOLDER - NOT YET TESTED ************************
+
 M550 P"Hypercube - Super Volcano"         ; Set machine name
 
 ;----- Extruder mapping

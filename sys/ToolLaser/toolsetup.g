@@ -1,4 +1,5 @@
 ; Laser Engraver
+;******************** PLACEHOLDER - NOT YET TESTED ************************
 
 M550 P"Hypercube - Laser"	              	      ; Set machine name
 
