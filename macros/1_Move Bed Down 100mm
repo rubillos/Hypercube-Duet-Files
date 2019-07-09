@@ -1,8 +1,7 @@
-G91                       ; relative positioning
-M584 P4                   ; show the A axis
-G1 S2 Z0.1 F4000          ; tiny z move to activate motors
-M400
-G1 S2 A1 F4000            ; force A axis to 'move' a tiny bit to enable it and release brake
-M400                      ; wait for any moves to finish
-M584 P3                   ; hide the A axis
-G1 Z100 F6000 S2          ; lower Z relative to current position
+G91                           ; relative positioning
+M584 P4                       ; expose the A axis
+G1 S2 Z0.1 F4000              ; tiny z move to activate motors
+G1 S2 A1 F4000                ; force A axis to 'move' a tiny bit to enable it and release brake
+M400                          ; wait for any moves to finish
+M584 P3                       ; hide the A axis
+G1 Z100 F6000 S2              ; lower Z relative to current position
