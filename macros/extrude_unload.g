@@ -1,6 +1,6 @@
 M116                                            ; Wait for the temperatures to be reached
 M291 P"Retracting from nozzle..." R"Unloading" T23  ; Display new message
-M584 P5                                         ; enable U axis
+M584 P5                                         ; expose U axis
 G91                                             ; relative mode
 G1 U-30 F300 S1                                 ; Retract 20mm slowly
 G1 U-1000 F3600 S1                              ; Retract 1000mm fast
