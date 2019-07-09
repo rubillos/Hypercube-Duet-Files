@@ -58,9 +58,9 @@ These files are for Hypercube Evolution printer. A Duex 5 expansion board is use
 G21 ; Set metric values
 T0 ; select tool 0  
 G10 S140 ; preheat extruder not enough to melt filament  
-M140 S[bed0\_temperature] ; set bed temp no wait  
-M98 P"/macros/home\_and\_level.g"  
-M98 P"/macros/purge\_and_prepare.g"  
+M140 S[bed0_temperature] ; set bed temp no wait  
+M98 P"/macros/home_and_level.g"  
+M98 P"/macros/purge_and_prepare.g"  
 ```
 
 ### Ending Code for Slicer
@@ -68,7 +68,7 @@ M98 P"/macros/purge\_and_prepare.g"
 G10 S0 ; turn off extruder  
 M140 S0 ; turn off bed  
 M106 S0 ; fan off  
-M98 P"/macros/present\_print.g"  
+M98 P"/macros/present_print.g"  
 M0 ; finish  
 ```
 
