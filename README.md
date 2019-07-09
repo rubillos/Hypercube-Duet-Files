@@ -73,10 +73,8 @@ M0 ; finish
 ```
 
 ### Settings for S3D for Firmware Retraction
-```
-Retraction Distance: 0.10mm  
-Retraction Speed: 66.6mm/s
-```
+- Retraction Distance: 0.10mm  
+- Retraction Speed: 66.6mm/s
 
 ### Script for S3D for Firmware Retraction
 ```
