@@ -54,5 +54,8 @@ M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
 ;----- Filament properties
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
+;----- Dynamic Acceleration
+M593 F36.2                                ; cancel ringing
+
 ;----- Finish
 M98 P"/sys/finish.g"
