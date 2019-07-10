@@ -1,5 +1,5 @@
 # Hypercube Evolution + Duet Ethernet Configuration Files
-These files are for Hypercube Evolution printer. A Duex 5 expansion board is used to support all of the hardware associated with the machine.
+These files are for a Hypercube Evolution printer controlled by a Duet Ethernet. A Duex 5 expansion board is used to support all of the hardware associated with the machine.
 
 ![Hypercube](images/Hypercube.jpg)
 
@@ -11,7 +11,7 @@ These files are for Hypercube Evolution printer. A Duex 5 expansion board is use
   - V6 (tested)
   - Volcano (tested)
   - Kraken
-  - Diamond Fullcolor
+  - Diamond Fullcolor water cooled
   - Super Volcano
   - Zesty Nimble
   - Laser Engraver
@@ -49,7 +49,7 @@ These files are for Hypercube Evolution printer. A Duex 5 expansion board is use
 - extrude\_load.g - drive virtual axis with buttons
 - extrude\_unload.g - unload filament
 
-## Slicer
+## Slicer Settings
 ### Start Code for Slicer
 ```
 G21 ; Set metric values
@@ -75,6 +75,7 @@ These two settings are a bit of a hack. They generate easily recognized gcodes w
 - Retraction Speed: 66.6mm/s
 
 ### Script for S3D for Firmware Retraction
+Note that the values above are mm/s, the values in the gcode are mm/min.
 ```
 {REPLACE "G1 E-0.1000 F3996" "G10"}  
 {REPLACE "G1 E0.0000 F3996" "G11"}
@@ -84,7 +85,7 @@ These two settings are a bit of a hack. They generate easily recognized gcodes w
 - gcode was all developed on a Mac using the Atom IDE.
 - Git is used to manage changes.
 - Files are pushed to the Duet using GoodSync.
-  - Originally used a Duet Wifi but it seemed to have issues with the dense Wifi environment it was in.
-  - Duet Ethernet is much more reliable.
+  - Originally was using a Duet Wifi but it seemed to have issues with the dense Wifi environment it was in (my laptop can see 96(!) base stations within range). This is in a house in SF with several neighbors with mesh networks installed.
+  - Duet Ethernet is much more reliable for me.
   - GoodSync can be set to use file checksums to verify differences. It was reliable even with the Duet Wifi's issues.
   - Termius is used for Telnet connections directly to the Duet.
