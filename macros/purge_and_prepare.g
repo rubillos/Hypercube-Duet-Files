@@ -7,9 +7,9 @@
 ; G1 X48 Y325                   ; middle of brush
 ; G1 X48 Y300                   ; in front of brush
 
+M703                          ; set filament parameters
 M116                          ; wait for temperature
 G10                           ; retract filament
-M703                          ; set filament parameters
 
 ;----- Prepare
 G60 S0                        ; save the current nozzle location

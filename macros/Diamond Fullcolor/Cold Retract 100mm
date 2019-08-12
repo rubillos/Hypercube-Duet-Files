@@ -1,0 +1,4 @@
+M302 P1                                   ; allow cold extrudes
+M83                                       ; relative extruder moves
+G1 E-100 F1000                            ; retract
+M302 P0                                   ; forbid cold extrudes

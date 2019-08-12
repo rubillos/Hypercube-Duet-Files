@@ -1,0 +1,4 @@
+T2
+M915 P7 S3 R0 F0                          ; enable stall detection
+
+M98 P"/macros/cold_load.g"
