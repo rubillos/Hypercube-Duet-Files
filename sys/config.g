@@ -35,9 +35,8 @@ M912 P0 S-12                                    ; CPU temp calibration
 
 ;----- Cooling Water
 M305 P105 X6 T100000 B4138 R4700 S"Water Temp"	; Virtual heater on water system - set thermistor + ADC parameters
-M106 P6 T30:35 H105 L0.3 C"Water Cooling"	      ; Water system radiator fan
 
-;----- Fans
+;----- Fans and Lights
 M106 P3 S5 I1 H-1 C"Frame Light"							  ; Frame lights
 M106 P4 S1.0 I0 H-1 C"Nozzle Light"							; Nozzle lights
 
@@ -49,7 +48,8 @@ M584 X0 Y1 Z2:3							                    ; X, Y, 2 x Z
 M671 X-38:538 Y250:250 S4.0 F1.0                ; leadscrews at left and right of X axis, 100% fudge factor
 
 ;----- Axis Limits
-M208 X0:490 Y0:490 Z0:745			                  ; X range 0 to 495, Y range 0 to 500, Z range 0 to 745
+M208 X0:490 Y0:490 Z0:745			                  ; define XYZ volume
+M557 X30:470 Y30:470 P8									        ; Define mesh grid
 
 ;----- Drives
 M569 P0 S0										                  ; Physical drive 0 goes backwards - X
@@ -61,7 +61,7 @@ M350     X16		Y16		Z16 I1   		              ; Configure microstepping with inter
 M92	     X80	  Y80	 Z400                       ; Set steps per mm
 M203	X30000 Y30000	Z3000                       ; Set maximum speeds (mm/min)
 M201	 X3500  Y3500	 Z600                       ; Set accelerations (mm/s^2)
-M566   X1400	Y1400	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
+M566   X2000	Y2000	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
 M906   X1200	Y1200	Z1200 I10	                  ; Set motor currents (mA) and motor idle factor in percent
 
 M917     X70    Y70   Z40                       ; Set standstill current reduction
@@ -78,7 +78,7 @@ M906 A200                                       ; enable stepper
 M584 P3                                         ; hide the A axis
 
 ;----- Endstops
-M574 X1 Y1 S3									                  ; Set XY endstops controlled by motor load detection
+M574 X1 Y2 S3									                  ; Set XY endstops controlled by motor load detection
 M574 Z0                                         ; No Z endstop yet
 
 ;----- Idle Timout
