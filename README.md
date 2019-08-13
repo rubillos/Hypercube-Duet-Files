@@ -40,6 +40,24 @@ These files are for a Hypercube Evolution printer controlled by a Duet Ethernet.
   - Sorbothane pads virtually eliminate vibration transmitted down to floor.
   - 3" wheels allow easy access to all parts of the machine.
 
+## Tool IDs
+0000 - No Tool
+0001 - V6
+0010 - Volcano
+0011 - Laser
+0100 - Kraken
+0101 - Zesty
+0110 - Super Volcano
+0111 - invalid
+1000 - Diamond Fullcolor
+1001 - invalid
+1010 - invalid
+1011 - invalid
+1100 - invalid
+1101 - invalid
+1110 - invalid
+1111 - Nozzle Setup
+
 ## Macros
 - purge\_and\_prepare.g - Purge bucket procedure
 - bucket\_retract.g - Retract purge bucket
