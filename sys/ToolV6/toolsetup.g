@@ -9,7 +9,7 @@ M569 P7 S1										            ; Physical drive 7 goes forwards
 
 M350 E16 U16 I1					                  ; Configure microstepping with interpolation
 M92 E408 U408				                      ; Set steps per mm
-M203 E6000 U6000			                    ; Set maximum speeds (mm/min)
+M203 E1200 U6000			                    ; Set maximum speeds (mm/min)
 M201 E1300 U1300				                  ; Set accelerations (mm/s^2)
 M566 E700	U700  			                    ; Set maximum instantaneous speed changes (mm/min)
 M906 E1200 U1200 I10                      ; Set motor currents (mA) and motor idle factor in percent

@@ -12,7 +12,7 @@ M92 E408 U408				                      ; Set steps per mm
 M203 E1200 U6000			                    ; Set maximum speeds (mm/min)
 M201 E800 U800				                    ; Set accelerations (mm/s^2)
 M566 E400	U400  			                    ; Set maximum instantaneous speed changes (mm/min)
-M906 E900 U900 I10                        ; Set motor currents (mA) and motor idle factor in percent
+M906 E900 U900 I20                        ; Set motor currents (mA) and motor idle factor in percent
 
 ;----- Virtual Load/Unload axis
 M574 U1 S0 C4                             ; active low, E1 input
