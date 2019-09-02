@@ -1,5 +1,17 @@
 ;M929 P"eventlog.txt" S1
 
+;----- Mute speaker
+M42 P127 S0
+
+M42 P126 S1
+M42 P125 S1
+M42 P124 S1
+M42 P123 S1
+M42 P122 S1
+M42 P121 S1
+M42 P120 S1
+M42 P127 S1
+
 ;----- General preferences
 G90													                    ; Send absolute coordinates...
 M83													                    ; ...but relative extruder moves
@@ -52,19 +64,17 @@ M208 X0:490 Y0:490 Z0:745			                  ; define XYZ volume
 M557 X30:470 Y30:470 P8									        ; Define mesh grid
 
 ;----- Drives
-M569 P0 S0										                  ; Physical drive 0 goes backwards - X
-M569 P1 S0										                  ; Physical drive 1 goes backwards - Y
-M569 P2 S0										                  ; Physical drive 2 goes reverse - Z1
-M569 P3 S0										                  ; Physical drive 3 goes reverse - Z2
+M569 P0 S0										                  ; Physical drive 0 reverse - X
+M569 P1 S0										                  ; Physical drive 1 reverse - Y
+M569 P2 S0										                  ; Physical drive 2 reverse - Z1
+M569 P3 S0										                  ; Physical drive 3 reverse - Z2
 
 M350     X16		Y16		Z16 I1   		              ; Configure microstepping with interpolation
 M92	     X80	  Y80	 Z400                       ; Set steps per mm
-M203	X30000 Y30000	Z3000                       ; Set maximum speeds (mm/min)
-M201	 X3500  Y3500	 Z600                       ; Set accelerations (mm/s^2)
+M203	X18000 Y18000	Z3000                       ; Set maximum speeds (mm/min)
+M201	 X3500  Y3500	 Z600                       ; Set accelerations (mm/s^2) (also in homeall.g, homex.g, homey.g)
 M566   X2000	Y2000	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
-M906   X1200	Y1200	Z1200 I10	                  ; Set motor currents (mA) and motor idle factor in percent
-
-M917     X70    Y70   Z40                       ; Set standstill current reduction
+M906   X1400	Y1400	Z1400    	                  ; Set motor currents (mA)
 
 ;----- Stepper Brake
 M584 A11                                        ; map "stepper" 11 to A axis
@@ -75,11 +85,21 @@ M203 A360                                       ; dummy max speed
 M201 A120                                       ; dummy acceleration
 M566 A24                                        ; dummy jerk
 M906 A200                                       ; enable stepper
+M84 A                                           ; make sure it's off
 M584 P3                                         ; hide the A axis
 
 ;----- Endstops
 M574 X1 Y2 S3									                  ; Set XY endstops controlled by motor load detection
 M574 Z0                                         ; No Z endstop yet
+
+;----- Emergency Stop
+M581 T0 E6 S0                                   ; Falling edge of E6 endstop
+
+;----- Baby Step Buttons
+M581 T6 X S0 C1                                 ; Down press - Falling edge of X endstop when printing
+M581 T7 X S1 C1                                 ; Down release - Rising edge of X endstop endstop when printing
+M581 T8 Y S0 C1                                 ; Up press - Falling edge of Y endstop endstop when printing
+M581 T9 Y S1 C1                                 ; Up release - Rising edge of Y endstop endstop when printing
 
 ;----- Idle Timout
 M84 S30											                    ; Set idle timeout

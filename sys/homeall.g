@@ -26,16 +26,16 @@ G92 X0 Y490                   ; set X and Y to 0
 
 M400                          ; wait for any moves to finish
 M913 X100 Y100                ; restore motor currents
-M201 X3500 Y3500              ; restore acceleration
+M201 X3500 Y3500              ; restore acceleration (from config.g)
 
 ;----- quick home Z
 M561                          ; clear any bed transform
 G90                           ; absolute positioning
-G1 X250 Y250 F24000           ; go to middle of bed
+G1 X250 Y250 F18000           ; go to middle of bed
 M558 F2000 A1                 ; do fast probes
 G30                           ; home Z by probing the bed
 M558 F300 A7                  ; do slow probe
-G1 X20 Y250 F24000            ; go to first point
+G1 X20 Y250 F18000            ; go to first point
 
 ;----- level the bed
 G30 P0 X20 Y250 Z-99999       ; probe near a leadscrew, half way along Y axis
@@ -43,7 +43,7 @@ G30 P1 X470 Y250 Z-99999 S2   ; probe near a leadscrew and calibrate 2 motors
 
 ;----- home Z
 G90                           ; absolute positioning
-G1 X250 Y250 F24000           ; go to middle of bed
+G1 X250 Y250 F18000           ; go to middle of bed
 G30                           ; home Z by probing the bed
 
 ;----- enable bed compensation

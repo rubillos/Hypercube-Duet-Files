@@ -11,7 +11,7 @@ M584 P3                       ; hide the A axis
 
 M913 X50 Y50                  ; reduce XY motor current to 50% to prevent belts slipping
 M915 X Y S4 R0 F0             ; enable stall detection
-M201 X200.00 Y200.00          ; reduce acceleration
+M201 X200 Y200                ; reduce acceleration
 G1 S2 Z4 F9000                ; lift Z relative to current position
 M400                          ; wait for completion
 
@@ -24,5 +24,5 @@ G1 S2 Z-4.1 F9000             ; lower Z again
 
 M400                          ; wait for any moves to finish
 M913 X100 Y100                ; restore motor currents
-M201 X3500 Y3500              ; restore acceleration
+M201 X3500 Y3500              ; restore acceleration (from config.g)
 G90                           ; absolute positioning

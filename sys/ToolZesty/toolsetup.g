@@ -14,14 +14,14 @@ M92 E408				                          ; Set steps per mm
 M203 E3600			                          ; Set maximum speeds (mm/min)
 M201 E3600				                        ; Set accelerations (mm/s^2)
 M566 E3600				                        ; Set maximum instantaneous speed changes (mm/min)
-M906 E1500 I30                            ; Set motor currents (mA) and motor idle factor in percent
+M906 E1500                                ; Set motor currents (mA)
 
 ;----- Idle Timout
 M84 S30											              ; Set idle timeout
 
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
-M558 P5 I1 F300 T24000 H3 R0.5 A7 S0.025  ; Digital probe, inverted trigger, z speed 300mm/min, travel 24000mm/sec, 3mm dive height, 0.5s delay, max 7 tries, max delta 0.03
+M558 P5 I1 F300 T18000 H3 R0.5 A7 S0.025  ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 3mm dive height, 0.5s delay, max 7 tries, max delta 0.03
 G31 X0 Y0 Z-0.05 P100                     ; Set probe offset, set trigger level
 
 ;----- Bed Compensation Taper
