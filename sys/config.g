@@ -69,12 +69,14 @@ M569 P1 S0										                  ; Physical drive 1 reverse - Y
 M569 P2 S0										                  ; Physical drive 2 reverse - Z1
 M569 P3 S0										                  ; Physical drive 3 reverse - Z2
 
-M350     X16		Y16		Z16 I1   		              ; Configure microstepping with interpolation
 M92	     X80	  Y80	 Z400                       ; Set steps per mm
+M350     X16		Y16		Z16 I1   		              ; Configure microstepping with interpolation
 M203	X18000 Y18000	Z3000                       ; Set maximum speeds (mm/min)
-M201	 X3500  Y3500	 Z600                       ; Set accelerations (mm/s^2) (also in homeall.g, homex.g, homey.g)
-M566   X2000	Y2000	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
+M201	 X2000  Y2000	Z1200                       ; Set accelerations (mm/s^2) (also in homeall.g, homex.g, homey.g)
+M566   X2000	Y2000	 Z900                       ; Set maximum instantaneous speed changes (mm/min)
 M906   X1400	Y1400	Z1400    	                  ; Set motor currents (mA)
+
+M566 P1                                         ; allow jerk between print and travel moves
 
 ;----- Stepper Brake
 M584 A11                                        ; map "stepper" 11 to A axis
@@ -96,10 +98,10 @@ M574 Z0                                         ; No Z endstop yet
 M581 T0 E6 S0                                   ; Falling edge of E6 endstop
 
 ;----- Baby Step Buttons
-M581 T6 X S0 C1                                 ; Down press - Falling edge of X endstop when printing
-M581 T7 X S1 C1                                 ; Down release - Rising edge of X endstop endstop when printing
-M581 T8 Y S0 C1                                 ; Up press - Falling edge of Y endstop endstop when printing
-M581 T9 Y S1 C1                                 ; Up release - Rising edge of Y endstop endstop when printing
+M581 T6 X S0 C0                                 ; Down press - Falling edge of X endstop
+M581 T7 X S1 C0                                 ; Down release - Rising edge of X endstop endstop
+M581 T8 Y S0 C0                                 ; Up press - Falling edge of Y endstop endstop
+M581 T9 Y S1 C0                                 ; Up release - Rising edge of Y endstop endstop
 
 ;----- Idle Timout
 M84 S30											                    ; Set idle timeout
