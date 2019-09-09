@@ -14,7 +14,7 @@ M106 P7 S1.0 T38 H1:100:101:102           ; Use hot end temp for electronics coo
 M106 P8 S1.0 T38 H1:100:101:102
 
 ;----- Tools
-M563 P0 S"V6" H1									        ; Define tool 0
+M563 P0 S"Setup" H1									      ; Define tool 0
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
 
 ;----- Finish
