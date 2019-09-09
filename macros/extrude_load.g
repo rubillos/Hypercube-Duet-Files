@@ -10,6 +10,8 @@ M291 P"Press button to stop" R"Loading Filament" T200   ; display new message
 M42 P122 S0 G4 P100 M42 P122 S1                 ; attention sound
 G1 U1000 F300 S1                                ; feed until button at 300mm/min
 
+G10                                             ; retract
+
 M584 P3                                         ; hide U axis
 G10 S0                                          ; turn off heater
 M84 E                                           ; turn off extruder
