@@ -15,7 +15,6 @@ G1 Z75 F3000                  ; move the bed down
 ;----- Wait for temp
 M703                          ; set filament parameters
 M116                          ; wait for temperature
-G10                           ; retract filament
 
 ;----- Move nozzle
 G90                           ; absolute moves
@@ -25,41 +24,30 @@ G4 P500                       ; wait
 G1 X10 Y315 F5000             ; over bucket
 
 ;----- Prime nozzle
-G11                           ; unretract filament
 M83                           ; relative extruder mode
 G1 E20 F300                   ; prime extruder
 M400                          ; wait for completion
-G4 P1000                      ; wait 1 sec
 G10                           ; retract filament
-G4 P2000                      ; wait 1 sec
+G4 P2000                      ; wait
 
 ;----- Clean nozzle
 G91                           ; relative moves
 G1 Y-50 F2000                 ; wipe nozzle
-G1 X38 F5000
-G1 Y75 F5000
-G1 Y-25 F5000
-G1 X-38 F5000
+G1 X20 F5000
+G1 Y50 F5000
+G1 X-20 F5000
 
 G1 Y-50 F2000                 ; wipe nozzle
-G1 X38 F5000
-G1 Y75 F5000
-G1 Y-25 F5000
-G1 X-38 F5000
+G1 X20 F5000
+G1 Y50 F5000
+G1 X-20 F5000
 
 G1 Y-50 F2000                 ; wipe nozzle
-G1 X38 F5000
-G1 Y75 F5000
-G1 Y-25 F5000
-
-G90
-G1 X10 Y450 F18000            ; behind bucket
 
 M280 P6 S179                  ; retract bucket
-G4 P500                       ; wait
 
 ;----- Wait for confirmation
-M42 P122 S0 G4 P100 M42 P122 S1 ; attention sound
+M42 P122 S0 G4 P120 M42 P122 S1 ; attention sound
 
 G90                           ; absolute
 G1 X410 Y60 F18000            ; put nozzle in plain view
