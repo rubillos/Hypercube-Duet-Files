@@ -27,7 +27,7 @@ These files are for a Hypercube Evolution printer controlled by a Duet Ethernet.
 - Physical button mounted to frame to stop filament feed during filament loading.
 
 ### Additional Features
-- 5 filament sensors connected through an Arduino that maps the active filaments for the current tool head. Allows me to use a single input for filament monitoring.
+- 5 filament sensors connected through an Arduino that maps the active filaments for the current tool head. Allows use of a single input for filament monitoring.
 - Arduino with a "time of flight" distance sensor below the bed which controls a vertical light strip running down the frame to only illuminate LEDs above the bed surface. Tracks as the bed moves down.
 - Raspberry Pi 3 with Camera that connects to the Duet via Telnet.
   - Watches the printer status, starts recording images when a print begins.
