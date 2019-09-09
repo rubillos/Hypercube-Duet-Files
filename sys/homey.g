@@ -24,5 +24,5 @@ G1 S2 Z-4.1 F9000             ; lower Z again
 
 M400                          ; wait for any moves to finish
 M913 X100 Y100                ; restore motor currents
-M201 X3500 Y3500              ; restore acceleration (from config.g)
+M201 X2000 Y2000              ; restore acceleration (from config.g)
 G90                           ; absolute positioning

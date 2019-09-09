@@ -26,7 +26,7 @@ G92 X0 Y490                   ; set X and Y to 0
 
 M400                          ; wait for any moves to finish
 M913 X100 Y100                ; restore motor currents
-M201 X3500 Y3500              ; restore acceleration (from config.g)
+M201 X2000 Y2000              ; restore acceleration (from config.g)
 
 ;----- quick home Z
 M561                          ; clear any bed transform
