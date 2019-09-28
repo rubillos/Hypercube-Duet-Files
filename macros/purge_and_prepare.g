@@ -25,7 +25,7 @@ G1 X10 Y315 F5000             ; over bucket
 
 ;----- Prime nozzle
 M83                           ; relative extruder mode
-G1 E20 F300                   ; prime extruder
+G1 E20 F150                   ; prime extruder
 M400                          ; wait for completion
 G10                           ; retract filament
 G4 P2000                      ; wait
