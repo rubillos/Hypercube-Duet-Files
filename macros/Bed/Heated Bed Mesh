@@ -17,6 +17,7 @@ G28                           ; home XYZ
 M291 P"Measuring..." R"Bed Mesh" T3000  ; Display message
 G29                           ; measure the bed mesh
 
+M374 P"heightmap.csv"         ; save it for this tool
 M374 P"/sys/heightmap.csv"    ; save it where DWC can find it
 G90                           ; absolute positioning
 G1 X250 Y250 F18000           ; go to middle of bed
