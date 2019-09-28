@@ -20,13 +20,16 @@ G1 S2 X0.2 F4000              ; tiny move to energize steppers
 G4 P100                       ; wait
 G1 S1 X-525 F4000             ; home X axis
 G1 X5                         ; move out 5mm
+G92 X0                        ; set X to 0
+G1 X25                        ; move out
 G1 S1 Y525 F4000              ; home Y axis
 G1 Y-5                        ; move back 5mm
-G92 X0 Y490                   ; set X and Y to 0
+G92 Y490                      ; set Y to maximum
+G1 Y-25                       ; move in
 
 M400                          ; wait for any moves to finish
 M913 X100 Y100                ; restore motor currents
-M201 X2000 Y2000              ; restore acceleration (from config.g)
+M201 X1000 Y1000              ; restore acceleration (from config.g)
 
 ;----- quick home Z
 M561                          ; clear any bed transform
@@ -47,4 +50,4 @@ G1 X250 Y250 F18000           ; go to middle of bed
 G30                           ; home Z by probing the bed
 
 ;----- enable bed compensation
-G29 S1 P"/sys/heightmap.csv"  ; enable bed compensation
+G29 S1 P"heightmap.csv"       ; enable bed compensation
