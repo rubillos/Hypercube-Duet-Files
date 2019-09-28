@@ -71,10 +71,10 @@ M569 P3 S0										                  ; Physical drive 3 reverse - Z2
 
 M92	     X80	  Y80	 Z400                       ; Set steps per mm
 M350     X16		Y16		Z16 I1   		              ; Configure microstepping with interpolation
-M203	X18000 Y18000	Z3000                       ; Set maximum speeds (mm/min)
-M201	 X2000  Y2000	Z1200                       ; Set accelerations (mm/s^2) (also in homeall.g, homex.g, homey.g)
-M566   X2000	Y2000	 Z900                       ; Set maximum instantaneous speed changes (mm/min)
-M906   X1400	Y1400	Z1400    	                  ; Set motor currents (mA)
+M203	X12000 Y12000	Z2000                       ; Set maximum speeds (mm/min)
+M201	 X1000  Y1000	Z1200                       ; Set accelerations (mm/s^2) (also in homeall.g, homex.g)
+M566   X1000	Y1000	Z1200                       ; Set maximum instantaneous speed changes (mm/min)
+M906   X1200	Y1200	Z1000    	                  ; Set motor currents (mA)
 
 M566 P1                                         ; allow jerk between print and travel moves
 
