@@ -1,0 +1,175 @@
+G90                     ; Absolute positioning
+
+G1 X150 Y50 F4000
+
+G91                     ; relative
+
+M291 P"2000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X90 F2000
+G1 X40 Y40
+G1 Y60
+G1 X-40 Y40
+G1 X-60
+G1 X-40 Y-40
+G1 Y-60
+G1 X40 Y-40
+
+M291 P"3000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X90 F3000
+G1 X60 Y60
+G1 Y90
+G1 X-60 Y60
+G1 X-90
+G1 X-60 Y-60
+G1 Y-90
+G1 X60 Y-60
+
+M291 P"4000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X90 F4000
+G1 X60 Y60
+G1 Y90
+G1 X-60 Y60
+G1 X-90
+G1 X-60 Y-60
+G1 Y-90
+G1 X60 Y-60
+
+M291 P"5000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F5000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"6000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F6000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"7000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F7000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"8000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F8000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"9000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F9000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"10000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F10000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"11000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F11000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"12000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F12000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"13000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F13000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"14000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F14000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"15000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F15000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"16000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F16000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"17000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F17000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
+
+M291 P"18000mm/min" R"Speed/Noise Test" T30   ; Display new message
+G1 X150 F18000
+G1 X100 Y100
+G1 Y150
+G1 X-100 Y100
+G1 X-150
+G1 X-100 Y-100
+G1 Y-150
+G1 X100 Y-100
