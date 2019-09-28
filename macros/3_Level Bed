@@ -17,4 +17,4 @@ G1 X250 Y250 F18000           ; go to middle of bed
 G30                           ; home Z by probing the bed
 
 ;----- enable bed compensation
-G29 S1 P"/sys/heightmap.csv"  ; enable bed compensation
+G29 S1 P"heightmap.csv"       ; enable bed compensation
