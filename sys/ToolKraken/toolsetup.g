@@ -35,12 +35,16 @@ M376 H5                                   ; reduce over 5mm
 ;----- Heaters
 M305 P1 T100000 B4138 R4700 S"1"				  ; Set thermistor + ADC parameters
 M143 H1 S260														  ; Set temperature limit
+M570 H1 S1000                             ; long timeout for cancel after heater fault
 M305 P2 T100000 B4138 R4700 S"2"				  ; Set thermistor + ADC parameters
 M143 H2 S260														  ; Set temperature limit
+M570 H2 S1000                             ; long timeout for cancel after heater fault
 M305 P3 T100000 B4138 R4700 S"3"				  ; Set thermistor + ADC parameters
 M143 H3 S260														  ; Set temperature limit
+M570 H3 S1000                             ; long timeout for cancel after heater fault
 M305 P4 T100000 B4138 R4700 S"4"				  ; Set thermistor + ADC parameters
 M143 H4 S260														  ; Set temperature limit
+M570 H4 S1 000                            ; long timeout for cancel after heater fault
 
 ;----- Virtual Heater
 M305 P800 X7 S"Water Radiator"            ; Thermistor on water radiator

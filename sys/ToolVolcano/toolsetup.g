@@ -9,9 +9,9 @@ M569 P7 S1										            ; Physical drive 7 goes forwards
 
 M92 E415 U415				                      ; Set steps per mm
 M350 E16 U16 I1					                  ; Configure microstepping with interpolation
-M203 E900 U6000			                      ; Set maximum speeds (mm/min)
+M203 E3000 U6000		                      ; Set maximum speeds (mm/min)
 M201 E1300 U1300				                  ; Set accelerations (mm/s^2)
-M566 E700	U700  			                    ; Set maximum instantaneous speed changes (mm/min)
+M566 E1300 U1300  			                  ; Set maximum instantaneous speed changes (mm/min)
 M906 E1200 U1200                          ; Set motor currents (mA)
 
 ;----- Virtual Load/Unload axis
@@ -33,6 +33,7 @@ M376 H5                                   ; reduce over 5mm
 M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
 M143 H1 S260														  ; Set temperature limit
 M307 H1 A311.4 C160.8 D5.4 V24.2 B0 S1.0  ; set heating parameters
+M570 H1 S1000                             ; long timeout for cancel after heater fault
 
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 L0.3 B0.3 C"Part Cooling"		; Fan 0, off, 30% minimum speed, 0.3s 'blip' to start

@@ -31,6 +31,7 @@ M376 H5                                   ; reduce over 5mm
 M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
 M143 H1 S260														  ; Set temperature limit
 M307 H1 A338.0 C133.1 D4.6 V24.2 B0 S1.0  ; set heating parameters
+M570 H1 S1000                             ; long timeout for cancel after heater fault
 
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 L0.3 B0.3 C"Part Cooling"		; Fan 0, off, 30% minimum speed, 0.3s 'blip' to start
