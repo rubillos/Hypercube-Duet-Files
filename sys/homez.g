@@ -16,4 +16,4 @@ M558 F2000 A1                 ; do fast probes
 G30                           ; home Z by probing the bed
 M558 F300 A7                  ; do slow probes
 G30                           ; home Z by probing the bed
-G29 S1 P"/sys/heightmap.csv"  ; enable bed compensation
+G29 S1 P"heightmap.csv"       ; enable bed compensation
