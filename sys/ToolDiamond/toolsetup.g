@@ -6,11 +6,11 @@ M550 P"Hypercube - Diamond"		            ; Set machine name
 M584 E5:6:7:8:9 U5:6:7:8:9	              ; 5 extruders, 5 virtual axis for load/unload
 
 ;----- Drives
-M569 P5 S1										            ; Physical drive 5 goes forwards - 1
-M569 P6 S1										            ; Physical drive 6 goes forwards - 2
-M569 P7 S1										            ; Physical drive 7 goes forwards - 3
-M569 P8 S1										            ; Physical drive 8 goes forwards - 4
-M569 P9 S1										            ; Physical drive 9 goes forwards - 5
+M569 P5 S0										            ; Physical drive 5 goes reverse - 1
+M569 P6 S0										            ; Physical drive 6 goes reverse - 2
+M569 P7 S0										            ; Physical drive 7 goes reverse - 3
+M569 P8 S0										            ; Physical drive 8 goes reverse - 4
+M569 P9 S0										            ; Physical drive 9 goes reverse - 5
 
 M92 E408:415:415:415:415 U415:415:415:415:415				          ; Set steps per mm
 M350 E16:16:16:16:16 U16:16:16:16:16 I1                       ; Configure microstepping with interpolation
@@ -19,8 +19,7 @@ M201 E1300:1300:1300:1300:1300 U1300:1300:1300:1300:1300	    ; Set accelerations
 M566 E700:700:700:700:700 U700:700:700:700:700				        ; Set maximum instantaneous speed changes (mm/min)
 M906 E1200:1200:1200:1200:1200 U1200:1200:1200:1200:1200    	; Set motor currents (mA)
 
-; M201 X2000 Y2000                          ; limit XY acceleration
-; M203 X9000 Y9000                          ; limit XY speed
+M203 X6000 Y6000                          ; limit XY speed
 
 ;----- Virtual Load/Unload axis
 M574 U1 S0 C4                             ; active low, E1 input

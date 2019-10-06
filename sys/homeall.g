@@ -29,7 +29,8 @@ G1 Y-25                       ; move in
 
 M400                          ; wait for any moves to finish
 M913 X100 Y100                ; restore motor currents
-M201 X1000 Y1000              ; restore acceleration (from config.g)
+
+M98 P"set_accel.g"            ; restore acceleration
 
 ;----- quick home Z
 M561                          ; clear any bed transform

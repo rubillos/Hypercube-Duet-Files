@@ -98,6 +98,11 @@ Note that the values above are mm/s, the values in the gcode are mm/min.
 ```
 {REPLACE "G1 E-0.1000 F3996" "G10"}  
 {REPLACE "G1 E0.0000 F3996" "G11"}
+{REPLACE "; feature inner perimeter" "; feature inner perimeter\nM98 Pprecise.g" }
+{REPLACE "; feature outer perimeter" "; feature outer perimeter\nM98 Pprecise.g" }
+{REPLACE "; feature infill" "; feature infill\nM98 Pfast.g" }
+{REPLACE "; feature solid layer" "; feature solid layer\nM98 Pfast.g" }
+{REPLACE "; feature support" "; feature support\nM98 Pfast.g"}
 ```
 
 ## Development tools

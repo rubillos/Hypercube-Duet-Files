@@ -12,6 +12,9 @@ G60 S0                        ; save the current nozzle location
 G91                           ; relative moves
 G1 Z75 F3000                  ; move the bed down
 
+;----- Reset speed params
+M98 Pfast.g
+
 ;----- Wait for temp
 M703                          ; set filament parameters
 M116                          ; wait for temperature

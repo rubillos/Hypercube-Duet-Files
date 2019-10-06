@@ -5,13 +5,13 @@ M550 P"Hypercube - V6"		                ; Set machine name
 M584 E7	U7						                    ; 1 extruder, 1 virtual axis for load/unload
 
 ;----- Extruders
-M569 P7 S1										            ; Physical drive 7 goes forward - 3
+M569 P7 S0										            ; Physical drive 7 goes reverse - 3
 
 M92 E415 U415				                      ; Set steps per mm
 M350 E16 U16 I1					                  ; Configure microstepping with interpolation
 M203 E3000 U6000 			                    ; Set maximum speeds (mm/min)
-M201 E1300 U1300				                  ; Set accelerations (mm/s^2)
-M566 E1300 U1300  			                  ; Set maximum instantaneous speed changes (mm/min)
+M201 E1500 U1500				                  ; Set accelerations (mm/s^2)
+M566 E1000 U1000  			                  ; Set maximum instantaneous speed changes (mm/min)
 M906 E1200 U1200                          ; Set motor currents (mA)
 
 ;----- Virtual Load/Unload axis
@@ -47,7 +47,6 @@ M106 P8 S1.0 T38 H1:100:101:102
 M563 P0 S"V6" D0 H1									      ; Define tool 0
 G10 P0 X0 Y0 Z0													  ; Set tool 0 axis offsets
 G10 P0 R0 S0															; Set initial tool 0 active and standby temperatures to 0C
-M572 D0 S0.80                             ; Pressure advance
 
 ;----- Filament Sensor
 M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
@@ -56,7 +55,10 @@ M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
 ;----- Dynamic Acceleration
-M593 F24                                  ; cancel ringing
+; M593 F24                                  ; cancel ringing
 
 ;----- Finish
+M98 P"set_accel.g"                        ; set acceleration
+M98 P"fast.g"                             ; set "fast" params
+
 M98 P"/sys/finish.g"

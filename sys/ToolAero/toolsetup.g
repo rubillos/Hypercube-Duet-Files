@@ -2,21 +2,19 @@
 M550 P"Hypercube - Titan Aero"		        ; Set machine name
 
 ;----- Extruder mapping
-M584 E9	U9						                    ; 1 extruder, 1 virtual axis for load/unload
+M584 E4	U4						                    ; 1 extruder, 1 virtual axis for load/unload
 
 ;----- Extruders
-M569 P9 S1										            ; Physical drive 9 goes forward
+M569 P4 S0										            ; Physical drive 9 goes reverse
 
 M92 E956 U956				                      ; Set steps per mm
 M350 E16 U16 I1					                  ; Configure microstepping with interpolation
 M203 E3000 U6000 			                    ; Set maximum speeds (mm/min)
-M201 E1300 U1300				                  ; Set accelerations (mm/s^2)
-M566 E1300 U1300  			                  ; Set maximum instantaneous speed changes (mm/min)
+M201 E1500 U1500				                  ; Set accelerations (mm/s^2)
+M566 E1000 U1000  			                  ; Set maximum instantaneous speed changes (mm/min)
 M906 E1200 U1200                          ; Set motor currents (mA)
 
 M203 X6000 Y6000                          ; limit XY speed
-M201 X600 Y400                            ; Set accelerations (mm/s^2) (also in homeall.g, homex.g)
-M566 X600	Y400                            ; Set maximum instantaneous speed changes (mm/min)
 
 ;----- Virtual Load/Unload axis
 M574 U1 S0 C4                             ; active low, E1 input
@@ -68,4 +66,7 @@ M404 N1.75 D0.4													  ; filament width and nozzle diameter
 ; M593 F24                                  ; cancel ringing
 
 ;----- Finish
+M98 P"set_accel.g"                        ; set acceleration
+M98 P"fast.g"                             ; set "fast" params
+
 M98 P"/sys/finish.g"

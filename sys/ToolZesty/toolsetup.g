@@ -4,10 +4,10 @@
 M550 P"Hypercube - Zesty"	              	; Set machine name
 
 ;----- Extruder mapping
-M584 E9							                      ; 1 extruder
+M584 E4							                      ; 1 extruder
 
 ;----- Extruders
-M569 P9 S1										            ; Physical drive 7 goes forwards
+M569 P4 S0										            ; Physical drive 9 goes reverse
 
 M92 E415				                          ; Set steps per mm
 M350 E16 I1					                      ; Configure microstepping with interpolation
@@ -54,4 +54,7 @@ M591 D0 P1 C3 S1													; filament sensor on E0 endstop input
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
 ;----- Finish
+M98 P"set_accel.g"                        ; set acceleration
+M98 P"fast.g"                             ; set "fast" params
+
 M98 P"/sys/finish.g"
