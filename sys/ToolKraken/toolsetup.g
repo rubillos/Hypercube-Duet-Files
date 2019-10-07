@@ -10,12 +10,13 @@ M569 P6 S0										            ; Physical drive 6 goes reverse - 2
 M569 P7 S0										            ; Physical drive 7 goes reverse - 3
 M569 P8 S0										            ; Physical drive 8 goes reverse - 4
 
-M92 E415:415:415:415 U415:415:415:415					   ; Set steps per mm
-M350 E16:16:16:16 U16:16:16:16 I1				         ; Configure microstepping with interpolation
-M203 E900:900:900:900 U6000:6000:6000:6000			 ; Set maximum speeds (mm/min)
-M201 E1000:1000:1000:1000 U1300:1300:1300:1300	 ; Set accelerations (mm/s^2)
-M566 E700:700:700:700 U700:700:700:700					 ; Set maximum instantaneous speed changes (mm/min)
-M906 E1200:1200:1200:1200 U1200:1200:1200:1200   ; Set motor currents (mA)
+M92 E415:415:415:415 U415:415:415:415		  ; Set steps per mm
+M350 E16:16:16:16 U16:16:16:16 I1				  ; Configure microstepping with interpolation
+
+M203 E3000 U6000			                    ; Set maximum speeds (mm/min)
+M201 E1000 U1300	                        ; Set accelerations (mm/s^2)
+M566 E1000 U1000					                ; Set maximum instantaneous speed changes (mm/min)
+M906 E1200 U1200                          ; Set motor currents (mA)
 
 M203 X6000 Y6000                          ; limit XY speed
 
@@ -28,8 +29,8 @@ M84 S30											              ; Set idle timeout
 
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
-G31 X0 Y0 Z-0.05 P100                     ; Set probe offset, set trigger level
 M558 P5 I1 F300 T18000 H3 R0.5 A7 S0.025  ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 3mm dive height, 0.5s delay, max 7 tries, max delta 0.03
+G31 X0 Y0 Z0.06 P100                     ; Set probe offset, set trigger level
 
 ;----- Bed Compensation Taper
 M376 H5                                   ; reduce over 5mm
@@ -89,4 +90,7 @@ M572 D0:1:2:3 S0.4  											; set pressure advance for all 5 extruders
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
 ;----- Finish
+M98 P"set_accel.g"                        ; set acceleration
+M98 P"fast.g"                             ; set "fast" params
+
 M98 P"/sys/finish.g"

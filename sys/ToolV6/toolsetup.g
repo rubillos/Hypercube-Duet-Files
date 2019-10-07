@@ -5,7 +5,7 @@ M550 P"Hypercube - V6"		                ; Set machine name
 M584 E7	U7						                    ; 1 extruder, 1 virtual axis for load/unload
 
 ;----- Extruders
-M569 P7 S0										            ; Physical drive 7 goes reverse - 3
+M569 P7 S0										            ; Physical drive 7 goes reverse
 
 M92 E415 U415				                      ; Set steps per mm
 M350 E16 U16 I1					                  ; Configure microstepping with interpolation
@@ -37,7 +37,6 @@ M570 H1 S1000                             ; long timeout for cancel after heater
 
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 L0.3 B0.3 C"Part Cooling"		; Fan 0, off, 30% minimum speed, 0.3s 'blip' to start
-;M106 P2 S0 I0 F500 H-1 C"Air Pump"				; assign air pump to fan 2
 M106 P1 S1.0 I0 H1 T40 L1.0 C"Nozzle"     ; Fan 1, thermostatic, 100% speed above 40º
 
 M106 P7 S1.0 T38 H1:100:101:102           ; Use hot end temp for electronics cooling trigger
