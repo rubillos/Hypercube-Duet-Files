@@ -30,7 +30,7 @@ G31 X0 Y0 Z0.06 P100                      ; Set probe offset, set trigger level
 
 ;----- Bed Limits
 M208 S1 Y25          			                ; limit low end of y range based on hot end size
-M208 S0 X475          			              ; limit low end of y range based on hot end size
+M208 S0 X475          			              ; limit high end of x range based on hot end size
 M557 X30:470 Y25:455 P8									  ; adjust mesh grid
 
 ;----- Bed Compensation Taper
