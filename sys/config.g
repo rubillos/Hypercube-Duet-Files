@@ -26,10 +26,9 @@ M586 P1 S1										                  ; Enable FTP
 M586 P2 S1										                  ; Enable Telnet
 
 ;----- Bed heater
-M305 P0 T100000 B4138 R4700 S"Heater"           ; Set thermistor + ADC parameters for heater 0
-M143 H0 S120									                  ; Set temperature limit for heater 0 to 120C
-M307 H0 A107.0 C390.6 D0.9 V0 B0 S1.0           ; set heating parameters
-M307 H0 B1                                      ; Bang Bang heating for now
+M305 P0 T100000 B4138 R4700 S"Heater"           ; Set thermistor + ADC parameters for bed heater
+M143 H0 S80									                    ; Set temperature limit for bed heater
+M307 H0 B1                                      ; Bang Bang heating
 
 ;----- PWM Pins
 M307 H6 A-1 C-1 D-1                             ; free up heater 6 pin - PWM4
@@ -40,8 +39,8 @@ M280 P6 S179                                    ; retract purge bucket
 
 ;----- Built-in temperature sensors
 M305 P100 S"CPU"							                  ; Main CPU
-M305 P101 S"Drivers Duet"			                  ; Drivers on Duet
-M305 P102 S"Drivers Duex5"				              ; Drivers on Duex5
+M305 P101 S"Duet Drivers"			                  ; Drivers on Duet
+M305 P102 S"Duex5 Drivers"				              ; Drivers on Duex5
 
 M912 P0 S-12                                    ; CPU temp calibration
 
@@ -57,7 +56,7 @@ M106 P8 T20:30 H100:101:102 L0.5 C"Electronics 2"	; Duet cooling set #2
 
 ;----- Drive mapping
 M584 X0 Y1 Z2:3							                    ; X, Y, 2 x Z
-M671 X-38:538 Y250:250 S4.0 F1.0                ; leadscrews at left and right of X axis, 100% fudge factor
+M671 X-38:538 Y245:245 S10.0 F1.0               ; leadscrews at left and right of X axis, 100% fudge factor
 
 ;----- Axis Limits
 M208 X0:490 Y0:490 Z0:745			                  ; define XYZ volume
@@ -76,7 +75,7 @@ M203	X12000 Y12000	Z2000                       ; Set maximum speeds (mm/min)
 M98 P"set_accel.g"                              ; set xy accel
 M201	             	Z1200                       ; Set z acceleration (mm/s^2)
 
-M566   X1200	Y1200	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
+M566              	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
 M906   X1200	Y1200	Z1000    	                  ; Set motor currents (mA)
 
 M566 P1                                         ; allow jerk between print and travel moves
