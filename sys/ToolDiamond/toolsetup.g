@@ -5,19 +5,20 @@ M550 P"Hypercube - Diamond"		            ; Set machine name
 ;----- Extruder mapping
 M584 E5:6:7:8:9 U5:6:7:8:9	              ; 5 extruders, 5 virtual axis for load/unload
 
-;----- Drives
+;----- Extruders
 M569 P5 S0										            ; Physical drive 5 goes reverse - 1
 M569 P6 S0										            ; Physical drive 6 goes reverse - 2
 M569 P7 S0										            ; Physical drive 7 goes reverse - 3
 M569 P8 S0										            ; Physical drive 8 goes reverse - 4
 M569 P9 S0										            ; Physical drive 9 goes reverse - 5
 
-M92 E408:415:415:415:415 U415:415:415:415:415				          ; Set steps per mm
-M350 E16:16:16:16:16 U16:16:16:16:16 I1                       ; Configure microstepping with interpolation
-M203 E900:900:900:900:900 U6000:6000:6000:6000:6000 	        ; Set maximum speeds (mm/min)
-M201 E1300:1300:1300:1300:1300 U1300:1300:1300:1300:1300	    ; Set accelerations (mm/s^2)
-M566 E700:700:700:700:700 U700:700:700:700:700				        ; Set maximum instantaneous speed changes (mm/min)
-M906 E1200:1200:1200:1200:1200 U1200:1200:1200:1200:1200    	; Set motor currents (mA)
+M92 E415:415:415:415:415 U415:415:415:415:415		; Set steps per mm
+M350 E16:16:16:16:16 U16:16:16:16:16 I1         ; Configure microstepping with interpolation
+
+M203 E3000 U6000 	                        ; Set maximum speeds (mm/min)
+M201 E1000 U1000                     	    ; Set accelerations (mm/s^2)
+M566 E500 U500              				      ; Set maximum instantaneous speed changes (mm/min)
+M906 E1200 U1200                         	; Set motor currents (mA)
 
 M203 X6000 Y6000                          ; limit XY speed
 
@@ -35,24 +36,29 @@ G31 X0 Y0 Z0.06 P100                      ; Set probe offset, set trigger level
 
 ;----- Bed Limits
 M208 S1 Y30          			                ; limit low end of y range based on hot end size
-M557 X30:470 Y40:470 P8									  ; adjust mesh grid
+M208 S0 X470          			              ; limit high end of x range based on hot end size
+M557 X30:470 Y40:460 P8									  ; adjust mesh grid
 
 ;----- Bed Compensation Taper
 M376 H5                                   ; reduce over 5mm
 
 ;----- Heater
 M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
-M143 H1 S210														  ; Set temperature limit
+M143 H1 S220														  ; Set temperature limit
 M307 H1 A336.5 C138.5 D3.2 V23.9 B0 S0.6
 M570 H1 S1000                             ; long timeout for cancel after heater fault
 
+;----- Hotend Cool Zone
+M305 P106 X2 T100000 B4138 R4700 S"Cool Zone 1"	; Virtual heater on hotend cool zone
+M143 P100 X106 H1 S45											; Add temperature monitor
+M305 P107 X3 T100000 B4138 R4700 S"Cool Zone 2"	; Virtual heater on hotend cool zone
+M143 P101 X107 H1 S45											; Add temperature monitor
+
 ;----- Fans
 M106 P0 S0 I0 F500 H-1 L0.3 B0.3 C"Part Cooling"		; Fan 0, off, 30% minimum speed, 0.3s 'blip' to start
-;M106 P2 S0 I0 F500 H-1 C"Air Pump"
 
-M106 P5 S1.0 I0 H1 T35 C"Water Pump"      ; water pump activates with hot end heat
-;M106 P6 T23 H105 C"Water Cooling"	        ; Water system radiator fan based on radiator temp
-M106 P6 T35 H1 C"Water Cooling"	          ; Water system radiator fan based on hot end temp
+M106 P5 S1.0 H1 T35 C"Water Pump"         ; water pump activates with hot end heat
+M106 P6 S1.0 H1 T35 C"Water Cooling"	    ; Water system radiator fan based on hot end temp
 
 M106 P7 S1.0 T38 H1:100:101:102           ; Use hot end temp for electronics cooling trigger
 M106 P8 S1.0 T38 H1:100:101:102
@@ -91,14 +97,14 @@ M591 D2 P1 C3 S1													; filament sensor on E0 endstop input
 M591 D3 P1 C3 S1													; filament sensor on E0 endstop input
 M591 D4 P1 C3 S1													; filament sensor on E0 endstop input
 
-;----- Pressure Advance
-M572 D0:1:2:3:4 S0.4											; set pressure advance for all 5 extruders
-
 ;----- Firmware Retraction
-M207 S3.0 F6000                           ; firmware retraction settings
+M207 S3.0 F3000 T1000                     ; firmware retraction settings
 
 ;----- Filament properties
 M404 N1.75 D0.4													  ; filament width and nozzle diameter
 
 ;----- Finish
+M98 P"set_accel.g"                        ; set acceleration
+M98 P"fast.g"                             ; set "fast" params
+
 M98 P"/sys/finish.g"
