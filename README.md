@@ -11,10 +11,11 @@ These files are for a Hypercube Evolution printer controlled by a Duet Ethernet.
   - V6 (tested)
   - Volcano (tested)
   - Kraken
-  - Diamond Fullcolor water cooled
+  - Diamond Fullcolor water cooled (tested)
   - Super Volcano (tested)
   - Zesty Nimble
   - Titan Aero (tested)
+  - DyzEND-X with DyzXtruder GT
   - Laser Engraver
 - Multiple cooling options
   - Tool head mounted fan
@@ -52,7 +53,7 @@ These files are for a Hypercube Evolution printer controlled by a Duet Ethernet.
 0111 - invalid
 1000 - Diamond Fullcolor
 1001 - Titan Aero
-1010 - invalid
+1010 - DyzeDesign
 1011 - invalid
 1100 - invalid
 1101 - invalid
