@@ -16,16 +16,10 @@ M201 E3600				                        ; Set accelerations (mm/s^2)
 M566 E3600				                        ; Set maximum instantaneous speed changes (mm/min)
 M906 E1200                                ; Set motor currents (mA)
 
-;----- Idle Timout
-M84 S30											              ; Set idle timeout
-
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
 M558 P5 I1 F300 T18000 H3 R0.5 A7 S0.025  ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 3mm dive height, 0.5s delay, max 7 tries, max delta 0.03
 G31 X0 Y0 Z0.06 P100                      ; Set probe offset, set trigger level
-
-;----- Bed Compensation Taper
-M376 H5                                   ; reduce over 5mm
 
 ;----- Heater
 M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters

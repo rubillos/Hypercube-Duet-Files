@@ -3,7 +3,7 @@
 M550 P"Hypercube - Diamond"		            ; Set machine name
 
 ;----- Extruder mapping
-M584 E5:6:7:8:9 U5:6:7:8:9	              ; 5 extruders, 5 virtual axis for load/unload
+M584 E5:6:7:8:9           	              ; 5 extruders
 
 ;----- Extruders
 M569 P5 S0										            ; Physical drive 5 goes reverse - 1
@@ -12,13 +12,14 @@ M569 P7 S0										            ; Physical drive 7 goes reverse - 3
 M569 P8 S0										            ; Physical drive 8 goes reverse - 4
 M569 P9 S0										            ; Physical drive 9 goes reverse - 5
 
-M92 E415:415:415:415:415 U415:415:415:415:415		; Set steps per mm
-M350 E16:16:16:16:16 U16:16:16:16:16 I1         ; Configure microstepping with interpolation
+M92 E415:415:415:415:415              		; Set steps per mm
+; M350 E16:16:16:16:16 I1                   ; Configure microstepping with interpolation
+M350 E128:128:128:128:128                 ; Configure microstepping no interpolation
 
-M203 E3000 U6000 	                        ; Set maximum speeds (mm/min)
-M201 E1000 U1000                     	    ; Set accelerations (mm/s^2)
-M566 E500 U500              				      ; Set maximum instantaneous speed changes (mm/min)
-M906 E1200 U1200                         	; Set motor currents (mA)
+M203 E3000       	                        ; Set maximum speeds (mm/min)
+M201 E1000                           	    ; Set accelerations (mm/s^2)
+M566 E500                   				      ; Set maximum instantaneous speed changes (mm/min)
+M906 E1200                               	; Set motor currents (mA)
 
 M203 X6000 Y6000                          ; limit XY speed
 
@@ -26,21 +27,10 @@ M203 X6000 Y6000                          ; limit XY speed
 M574 U1 S0 C4                             ; active low, E1 input
 M584 P3                                   ; hide virtual axis
 
-;----- Idle Timout
-M84 S30											              ; Set idle timeout
-
 ;----- Z-Probe
 M574 Z1 S2															  ; Set Z endstop controlled by probe
 M558 P5 I1 F300 T18000 H3 R1.0 A7 S0.025  ; Digital probe, inverted trigger, z speed 300mm/min, travel 18000mm/sec, 3mm dive height, 1.0s delay, max 7 tries, max delta 0.03
 G31 X0 Y0 Z0.06 P100                      ; Set probe offset, set trigger level
-
-;----- Bed Limits
-M208 S1 Y30          			                ; limit low end of y range based on hot end size
-M208 S0 X470          			              ; limit high end of x range based on hot end size
-M557 X30:470 Y40:460 P8									  ; adjust mesh grid
-
-;----- Bed Compensation Taper
-M376 H5                                   ; reduce over 5mm
 
 ;----- Heater
 M305 P1 T100000 B4138 R4700 S"Hotend"	    ; Set thermistor + ADC parameters
