@@ -18,18 +18,19 @@ M400                          ; wait for completion
 
 G1 S2 X0.2 F4000              ; tiny move to energize steppers
 G4 P100                       ; wait
-G1 S1 X-525 F4000             ; home X axis
-G1 X5                         ; move out 5mm
-G92 X0                        ; set X to 0
-G1 X25                        ; move out
-G1 S1 Y525 F4000              ; home Y axis
-G1 Y-5                        ; move back 5mm
-G92 Y490                      ; set Y to maximum
-G1 Y-25                       ; move in
+
+G1 S1 X-525 F4000             ; move quickly to X axis endstop and stop there
+G1 X30                        ; move out
+
+G1 S1 Y525 F4000              ; home Y axis at the back
+G1 Y-30                       ; move back
+
+M98 P"set_xy.g"               ; set XY coords
 
 M400                          ; wait for any moves to finish
 M913 X100 Y100                ; restore motor currents
-M201 X600 Y400                ; restore acceleration (from toolsetup.g)
+
+M98 P"set_accel.g"            ; restore acceleration
 
 ;----- quick home Z
 M561                          ; clear any bed transform
