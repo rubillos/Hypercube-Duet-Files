@@ -8,5 +8,5 @@ M400                                            ; Wait for moves to complete
 M584 P3                                         ; hide U axis
 G10 S0                                          ; Turn off heater
 M292                                            ; Hide the message
-M84 E                                           ; Turn off extruder
+M18 E                                           ; Turn off extruder
 M0

@@ -50,7 +50,7 @@ G1 Y-50 F2000                 ; wipe nozzle
 M280 P6 S179                  ; retract bucket
 
 ;----- Wait for confirmation
-M42 P122 S0 G4 P120 M42 P122 S1 ; attention sound
+M118 P4 S"sound:attention.wav"
 
 G90                           ; absolute
 G1 X410 Y60 F18000            ; put nozzle in plain view

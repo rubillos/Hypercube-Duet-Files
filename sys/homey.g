@@ -1,2 +1,2 @@
 ; homey.g
-M98 P"/sys/homex.g"       ; home x does by x and y
+M98 P"/sys/homex.g"       ; home y does both x and y

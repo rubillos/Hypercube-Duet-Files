@@ -1,1 +1,1 @@
-M84 XY               ; Turn off X and Y motors
+M18 XY               ; Turn off X and Y motors

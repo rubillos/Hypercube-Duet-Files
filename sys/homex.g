@@ -18,14 +18,12 @@ M400                          ; wait for completion
 G1 S2 X0.2 F4000              ; tiny move to energize stepper
 G4 P100                       ; wait
 G1 S1 X-525 F4000             ; move quickly to X axis endstop and stop there
-G1 X5                         ; move out 5mm
-G92 X0                        ; set X to 0
-G1 X25                        ; move out 25mm
+G1 X30                        ; move out
 
 G1 S1 Y525 F4000              ; home Y axis at the back
-G1 Y-5                        ; move back 5mm
-G92 Y490                      ; set Y to max
-G1 Y-25                       ; move back 25mm
+G1 Y-30                       ; move back
+
+M98 P"set_xy.g"               ; set XY coords
 
 G1 S2 Z-5.1 F9000             ; raise Z again
 

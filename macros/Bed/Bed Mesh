@@ -1,15 +1,20 @@
 M290 R0 S0                    ; reset baby-stepping
 
-M42 P122 S0 G4 P100 M42 P122 S1 ; attention sound
+M118 P4 S"sound:attention.wav"
+
+G92 Z0                        ; mark Z at 0 so we are allowed to move the bed down
+
 M291 S3 P"Check nozzle, then press OK..." R"Bed Mesh"   ; Wait for OK
 
-M291 P"Measuring..." R"Bed Mesh" T300  ; Display message
-
+M291 P"Homing XYZ..." R"Bed Mesh" T300  ; Display message
 G28                           ; home XYZ
+
+M291 P"Measuring..." R"Bed Mesh" T300  ; Display message
 G29                           ; measure the bed mesh
+
 M374 P"heightmap.csv"         ; save it for this tool
 M374 P"/sys/heightmap.csv"    ; save it where DWC can find it
 G90                           ; absolute positioning
-G1 X250 Y250 F18000           ; go to middle of bed
+G1 X245 Y245 F18000           ; go to middle of bed
 
 M291 P"Measurements Complete" R"Bed Mesh" T5  ; Display message

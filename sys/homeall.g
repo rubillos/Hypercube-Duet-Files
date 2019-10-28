@@ -18,14 +18,14 @@ M400                          ; wait for completion
 
 G1 S2 X0.2 F4000              ; tiny move to energize steppers
 G4 P100                       ; wait
-G1 S1 X-525 F4000             ; home X axis
-G1 X5                         ; move out 5mm
-G92 X0                        ; set X to 0
-G1 X25                        ; move out
-G1 S1 Y525 F4000              ; home Y axis
-G1 Y-5                        ; move back 5mm
-G92 Y490                      ; set Y to maximum
-G1 Y-25                       ; move in
+
+G1 S1 X-525 F4000             ; move quickly to X axis endstop and stop there
+G1 X30                        ; move out
+
+G1 S1 Y525 F4000              ; home Y axis at the back
+G1 Y-30                       ; move back
+
+M98 P"set_xy.g"               ; set XY coords
 
 M400                          ; wait for any moves to finish
 M913 X100 Y100                ; restore motor currents
@@ -35,19 +35,19 @@ M98 P"set_accel.g"            ; restore acceleration
 ;----- quick home Z
 M561                          ; clear any bed transform
 G90                           ; absolute positioning
-G1 X250 Y250 F18000           ; go to middle of bed
+G1 X245 Y245 F18000           ; go to middle of bed
 M558 F2000 A1                 ; do fast probes
 G30                           ; home Z by probing the bed
 M558 F300 A7                  ; do slow probe
-G1 X20 Y250 F18000            ; go to first point
+G1 X30 Y245 F18000            ; go to first point
 
 ;----- level the bed
-G30 P0 X20 Y250 Z-99999       ; probe near a leadscrew, half way along Y axis
-G30 P1 X470 Y250 Z-99999 S2   ; probe near a leadscrew and calibrate 2 motors
+G30 P0 X30 Y245 Z-99999       ; probe near a leadscrew, half way along Y axis
+G30 P1 X460 Y245 Z-99999 S2   ; probe near a leadscrew and calibrate 2 motors
 
 ;----- home Z
 G90                           ; absolute positioning
-G1 X250 Y250 F18000           ; go to middle of bed
+G1 X245 Y245 F18000           ; go to middle of bed
 G30                           ; home Z by probing the bed
 
 ;----- enable bed compensation
