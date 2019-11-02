@@ -1,2 +1,16 @@
-M505 P"/sys/toolid"
-M98 P"tools.g"
+; Delete all existing Tools
+
+M563 P0 D-1 H-1
+M563 P1 D-1 H-1
+M563 P2 D-1 H-1
+M563 P3 D-1 H-1
+M563 P4 D-1 H-1
+M563 P5 D-1 H-1
+M563 P6 D-1 H-1
+M563 P7 D-1 H-1
+M563 P8 D-1 H-1
+M563 P9 D-1 H-1
+
+; Re-run the tool identifier
+
+M98 P"/toolid/tools.g"

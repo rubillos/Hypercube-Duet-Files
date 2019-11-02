@@ -1,5 +1,3 @@
-;M929 P"eventlog.txt" S1
-
 ;----- Stepper Brake
 M584 A11                                        ; map "stepper" 11 to A axis
 M569 P11 R1                                     ; set enable to active high
@@ -12,10 +10,9 @@ M906 A200                                       ; enable stepper
 M18 A                                           ; make sure it's off
 
 ;----- General preferences
-G90													                    ; Send absolute coordinates...
-M83													                    ; ...but relative extruder moves
-
-M669 K1											                    ; Select CoreXY mode
+G90													                    ; Send absolute coordinates
+M83													                    ; Relative extruder moves
+M669 K1											                    ; CoreXY mode
 
 ;----- Network
 M550 P"Hypercube"		                            ; Set machine name
@@ -58,8 +55,8 @@ M584 X0 Y1 Z2:3							                    ; X, Y, 2 x Z
 M671 X-38:528 Y245:245 S10.0 F1.0               ; leadscrews at left and right of X axis, 100% fudge factor
 
 ;----- Axis Limits
-M208 X0:490 Y0:490 Z0:745			                  ; define XYZ volume
-M557 X30:460 Y30:460 P9									        ; Define mesh grid
+M208 X0:490 Y0:490 Z0:745			                  ; XYZ volume
+M557 X30:460 Y30:460 P9									        ; Mesh grid
 
 ;----- Drives
 M569 P0 S0										                  ; Physical drive 0 reverse - X
@@ -67,15 +64,16 @@ M569 P1 S0										                  ; Physical drive 1 reverse - Y
 M569 P2 S0										                  ; Physical drive 2 reverse - Z1
 M569 P3 S0										                  ; Physical drive 3 reverse - Z2
 
-M92	     X80	  Y80	 Z400                       ; Set steps per mm
-M350     X16		Y16		Z16 I1   		              ; Configure microstepping with interpolation
-M203	X12000 Y12000	Z2000                       ; Set maximum speeds (mm/min)
+M92	X80	Y80	Z400                       					; Set steps per mm
+M350 X16 Y16 Z16 I1   		              				; Configure microstepping with interpolation
+M203 X12000 Y12000 Z2000                      	; Set maximum speeds (mm/min)
 
 M98 P"set_accel.g"                              ; set xy accel
-M201	             	Z1200                       ; Set z acceleration (mm/s^2)
 
-M566              	 Z600                       ; Set maximum instantaneous speed changes (mm/min)
-M906   X1200	Y1200	Z1000    	                  ; Set motor currents (mA)
+M201 Z1200                       								; Set z acceleration (mm/s^2)
+M566 Z600                       								; Set maximum instantaneous speed changes (mm/min)
+
+M906 X1200 Y1200 Z1000    	                  	; Set motor currents (mA)
 
 M566 P1                                         ; allow jerk between print and travel moves
 
@@ -92,5 +90,4 @@ M581 T0 E6 S0                                   ; Falling edge of E6 endstop
 M84 S30											                    ; Set idle timeout
 
 ;----- Configure Installed Tool
-M505 P"toolid"
-M98 P"tools.g"
+M98 P"/toolid/tools.g"
