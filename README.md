@@ -74,6 +74,7 @@ These files are for a Hypercube Evolution printer controlled by a Duet Ethernet.
 ```
 G21 ; Set metric values
 T0 ; select tool 0  
+; [extruder0_temperature] fake command for Simplify3D
 G10 S140 ; preheat extruder not enough to melt filament  
 M140 S[bed0_temperature] ; set bed temp no wait  
 M98 P"/macros/home_and_level.g"  
