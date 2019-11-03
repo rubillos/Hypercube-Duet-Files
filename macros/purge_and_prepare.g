@@ -50,6 +50,7 @@ G1 Y-50 F2000                 ; wipe nozzle
 M280 P6 S179                  ; retract bucket
 
 ;----- Wait for confirmation
+M400                          ; wait for any moves to finish
 M118 P4 S"sound:attention.wav"
 
 G90                           ; absolute

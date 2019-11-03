@@ -4,6 +4,7 @@ M290 R0 S0                  ; reset baby-stepping
 M220 S100                   ; reset speed multiplier
 M221 S100                   ; reset extrusion multiplier
 
+M400                        ; wait for any moves to finish
 M118 P4 S"sound:attention.wav"
 
 G92 Z0                      ; mark Z at 0 so we are allowed to move the bed down

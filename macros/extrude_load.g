@@ -7,6 +7,7 @@ G1 U20 F600 S1                                  ; feed into extruder at 600mm/mi
 G1 U880 F3600 S1                                ; feed bowden tube at 3600mm/min
 
 M291 P"Press button to stop" R"Loading Filament" T200   ; display new message
+M400                          									; wait for any moves to finish
 M118 P4 S"sound:attention.wav"
 G1 U1000 F300 S1                                ; feed until button at 300mm/min
 

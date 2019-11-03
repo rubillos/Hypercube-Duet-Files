@@ -6,6 +6,7 @@ G10 S140                      ; preheat extruder not enough to melt filament
 M140 S60                      ; set bed temp no wait
 M116                          ; wait for temp
 
+M400                          ; wait for any moves to finish
 M118 P4 S"sound:attention.wav"
 
 G92 Z0                        ; mark Z at 0 so we are allowed to move the bed down
