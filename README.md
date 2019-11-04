@@ -31,13 +31,16 @@ These files are for a Hypercube Evolution printer controlled by a Duet Ethernet.
 ### Additional Features
 - 5 filament sensors connected through an Arduino that maps the active filaments for the current tool head. Allows use of a single input for filament monitoring.
 - Arduino with a "time of flight" distance sensor below the bed which controls a vertical light strip running down the frame to only illuminate LEDs above the bed surface. Tracks as the bed moves down.
-- Raspberry Pi 3 with Camera that connects to the Duet via Telnet.
+- Raspberry Pi 4 with Camera that connects to the Duet via Telnet.
   - Watches the printer status, starts recording images when a print begins.
   - Takes a new picture at each layer change.
   - On completion:
     - Uses FFMPEG to create a movie.
     - Sends an SMS via Twilio to indicate completion.
     - Sends an email with the last recorded image.
+	- Listens for messages from the Duet
+		- messages that start with "sound:" will play the named sound.
+		- messages that start with "sms:" will send the text as an SMS.
 - Main frame sits on top of a 12" tall cart made of 3030 extrusion.
   - Sorbothane pads virtually eliminate vibration transmitted down to floor.
   - 3" wheels allow easy access to all parts of the machine.
@@ -53,7 +56,7 @@ These files are for a Hypercube Evolution printer controlled by a Duet Ethernet.
 0111 - invalid
 1000 - Diamond Fullcolor
 1001 - Titan Aero
-1010 - DyzeDesign
+1010 - Dyze Design
 1011 - invalid
 1100 - invalid
 1101 - invalid
