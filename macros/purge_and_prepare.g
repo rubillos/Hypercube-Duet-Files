@@ -8,12 +8,11 @@
 ; G1 X48 Y300                   ; in front of brush
 
 ;----- Prepare
-G60 S0                        ; save the current nozzle location
 G91                           ; relative moves
 G1 Z75 F3000                  ; move the bed down
 
 ;----- Reset speed params
-M98 Pfast.g
+M98 P"fast.g"
 
 ;----- Wait for temp
 M703                          ; set filament parameters
@@ -30,7 +29,7 @@ G1 X10 Y315 F5000             ; over bucket
 M83                           ; relative extruder mode
 G1 E20 F150                   ; prime extruder
 M400                          ; wait for completion
-G10                           ; retract filament
+G1 E-3 F1800                  ; retract filament
 G4 P2000                      ; wait
 
 ;----- Clean nozzle
@@ -54,9 +53,8 @@ M400                          ; wait for any moves to finish
 M118 P4 S"sound:attention.wav"
 
 G90                           ; absolute
-G1 X410 Y60 F18000            ; put nozzle in plain view
+G1 X400 Y70 F18000            ; put nozzle in plain view
 
 M291 S2 P"Check nozzle..." R"Ready to Print"   ; Wait for OK
 
-;----- Back to printing
-G0 R0 X0 Y0 Z0 F18000         ; restore nozzle positioning
+G1 X245 Y245 Z30 F18000       ; move to center
