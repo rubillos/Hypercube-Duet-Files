@@ -1,9 +1,13 @@
-M116                                            ; wait for the temperatures to be reached
 M584 P5                                         ; expose U axis
 
-M291 P"Filling Bowden Tube" R"Loading Filament" T20   ; Display new message
+M291 P"Pre-loading Filament..." R"Loading Filament" T300  ; Display message
 G91                                             ; relative mode
 G1 U20 F600 S1                                  ; feed into extruder at 600mm/min
+
+M291 P"Heating Nozzle..." R"Loading Filament" T300  ; Display message
+M116                                            ; wait for the temperatures to be reached
+
+M291 P"Filling Bowden Tube" R"Loading Filament" T20   ; Display new message
 G1 U880 F3600 S1                                ; feed bowden tube at 3600mm/min
 
 M291 P"Press button to stop" R"Loading Filament" T200   ; display new message
