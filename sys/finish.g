@@ -1,9 +1,6 @@
 ;----- Idle Timout
 M84 S30											              ; Set idle timeout
 
-;----- Bed Compensation Taper
-M376 H5                                   ; reduce over 5mm
-
 ;----- Final setup
 M906 I30                                  ; Set motor currents (mA) and motor idle factor in percent
 M106 P3 S0.75                             ; set frame lights to operating level
