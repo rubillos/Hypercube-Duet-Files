@@ -46,22 +46,22 @@ These files are for a Hypercube Evolution printer controlled by a Duet Ethernet.
   - 3" wheels allow easy access to all parts of the machine.
 
 ## Tool IDs
-0000 - No Tool
-0001 - V6
-0010 - Volcano
-0011 - Laser
-0100 - Kraken
-0101 - Zesty
-0110 - Super Volcano
-0111 - invalid
-1000 - Diamond Fullcolor
-1001 - Titan Aero
-1010 - Dyze Design
-1011 - invalid
-1100 - invalid
-1101 - invalid
-1110 - invalid
-1111 - Nozzle Setup
+0000 -  0 - No Tool
+0001 -  1 - V6
+0010 -  2 - Volcano
+0011 -  3 - Laser
+0100 -  4 - Kraken
+0101 -  5 - Zesty
+0110 -  6 - Super Volcano
+0111 -  7 - invalid
+1000 -  8 - Diamond Fullcolor
+1001 -  9 - Titan Aero
+1010 - 10 - Dyze Design
+1011 - 11 - invalid
+1100 - 12 - invalid
+1101 - 13 - invalid
+1110 - 14 - invalid
+1111 - 15 - Nozzle Setup
 
 ## Macros
 - purge\_and\_prepare.g - Purge bucket procedure
