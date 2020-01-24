@@ -9,7 +9,7 @@ G1 S2 A1 F4000                ; force A axis to 'move' a tiny bit to enable it a
 M400                          ; wait for any moves to finish
 M584 P3                       ; hide the A axis
 
-M913 X50 Y50                  ; reduce XY motor current to 50% to prevent belts slipping
+M913 X30 Y30                  ; reduce XY motor current to 50% to prevent belts slipping
 M915 X Y S4 R0 F0             ; enable stall detection
 M201 X200 Y200                ; reduce acceleration
 G1 S2 Z5 F9000                ; lower Z relative to current position
