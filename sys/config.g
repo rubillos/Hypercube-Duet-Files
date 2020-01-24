@@ -23,7 +23,7 @@ M586 P2 S1										                  ; Enable Telnet
 
 ;----- Bed heater
 M305 P0 T100000 B4138 R4700 S"Heater"           ; Set thermistor + ADC parameters for bed heater
-M143 H0 S80									                    ; Set temperature limit for bed heater
+M143 H0 S90									                    ; Set temperature limit for bed heater
 M307 H0 B1                                      ; Bang Bang heating
 
 ;----- PWM Pins
@@ -65,19 +65,21 @@ M569 P2 S0										                  ; Physical drive 2 reverse - Z1
 M569 P3 S0										                  ; Physical drive 3 reverse - Z2
 
 M92	X80	Y80	Z400                       					; Set steps per mm
-M350 X16 Y16 Z16 I1   		              				; Configure microstepping with interpolation
-M203 X12000 Y12000 Z2000                      	; Set maximum speeds (mm/min)
+M350 X16 Y16 Z16 I1		              						; Configure xyz microstepping with interpolation
+M203 X24000 Y24000 Z2000                      	; Set maximum speeds (mm/min)
+M906 X1600 Y1600 Z1200    	                  	; Set motor currents (mA)
+M906 I15																				; Set idle current percentage
+
+M201 X1200 Y1200 Z1200                       		; Set accelerations (mm/s^2)
+M566 X1200 Y1200 Z600                       		; Set maximum instantaneous speed changes (mm/min)
 
 M98 P"set_accel.g"                              ; set xy accel
 
-M201 Z1200                       								; Set z acceleration (mm/s^2)
-M566 Z600                       								; Set maximum instantaneous speed changes (mm/min)
-
-M906 X1200 Y1200 Z1000    	                  	; Set motor currents (mA)
-
 M566 P1                                         ; allow jerk between print and travel moves
-
 M584 P3                                         ; hide the A axis
+
+;----- Bed Compensation Taper
+; M376 H5                                   			; reduce over 5mm
 
 ;----- Endstops
 M574 X1 Y2 S3									                  ; Set XY endstops controlled by motor load detection
